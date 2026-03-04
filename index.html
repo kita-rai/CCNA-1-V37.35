@@ -42,7 +42,7 @@ const allQuestions = [
   },
   {
     "id": "NO.3",
-    "question": "左側にあるRESTベースAPIで使用されるHTTPメソッドを、右側の説明にドラッグアンドドロップしてください。",
+    "question": "左側にあるRESTベースAPIで使用されるHTTPメソッドを、右側の説明にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -73,14 +73,14 @@ const allQuestions = [
   },
   {
     "id": "NO.6",
-    "question": "ネットワークアーキテクチャの特性を左から右のアーキテクチャの種類にドラッグアンドドロップしてください。",
+    "question": "ネットワークアーキテクチャの特性を左から右のアーキテクチャの種類にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.7",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nエンジニアが、ウェブサーバーにスタティックNATを提供するようにルーターを設定しています。左のコンフィグレーションコマンドを、右のコンフィグレーション内の対応する位置の文字にドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nエンジニアが、ウェブサーバーにスタティックNATを提供するようにルーターを設定しています。左のコンフィグレーションコマンドを、右のコンフィグレーション内の対応する位置の文字にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -196,7 +196,7 @@ const allQuestions = [
   },
   {
     "id": "NO.17",
-    "question": "左側の脅威緩和技術を、それが緩和する右側の脅威または攻撃のタイプにドラッグアンドドロップしてください。",
+    "question": "左側の脅威緩和技術を、それが緩和する右側の脅威または攻撃のタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -227,10 +227,10 @@ const allQuestions = [
   },
   {
     "id": "NO.20",
-    "question": "左から右へRapid PVST+転送状態のアクションをドラッグアンドドロップしてください。すべてのアクションが使用されるわけではありません。",
+    "question": "左から右へRapid PVST+転送状態のアクションをドラッグアンドドロップしてください。すべてのアクションが使用されるわけではありません。\nAnswer:\n*+>Explanation:\n1. 受信したBPDUはシステムモジュールに転送されます。\n2. 接続されたセグメントから受信したフレームは処理されます。\n3. 他のポートから受信したスイッチされたフレームは転送されます。\n4. 転送状態のポートはネットワーク管理メッセージに応答します。\nhttps://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5000/sw/layer2/503_n1_1\n/Cisco_n5k_layer2_config_gd_rel_503_N1_1_chapter9.html",
     "options": [],
     "answer": "",
-    "explanation": "1. 受信したBPDUはシステムモジュールに転送されます。\n2. 接続されたセグメントから受信したフレームは処理されます。\n3. 他のポートから受信したスイッチされたフレームは転送されます。\n4. 転送状態のポートはネットワーク管理メッセージに応答します。\nhttps://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5000/sw/layer2/503_n1_1\n/Cisco_n5k_layer2_config_gd_rel_503_N1_1_chapter9.html"
+    "explanation": ""
   },
   {
     "id": "NO.21",
@@ -261,42 +261,11 @@ const allQuestions = [
     "id": "NO.23",
     "question": "展示画像を参照してください。[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nPC-1からRTR-1の任意のインターフェースへのSSHアクセスを拒否し、その他のすべてのトラフィックを許可するRTR-1の設定はどれですか？",
     "options": [
-      "A. access-list 100 deny tcp host 172.16.1.33 any e"
+      "A. access-list 100 deny tcp host 172.16.1.33 any eq 22 access-list 100 permit ip any anyinterface GigabitEthernet0/0 ip access-group 100 in",
+      "B. access-list 100 deny tcp host 172.16.1.33 any eq 22 access-list 100 permit ip any anyline vty 0 15 ip access-group 100 in",
+      "C. access-list 100 deny tcp host 172.16.1.33 any eq 23 access-list 100 permit ip any anyinterface GigabitEthernet0/0 ip access-group 100 in",
+      "D. access-list 100 deny tcp host 172.16.1.33 any eq 23 access-list 100 permit ip any anyline vty 0 15 ip access-group 100 in"
     ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22",
-    "question": "access-list 100 permit ip any anyinterface GigabitEthernet0/0 ip access-group 100 in",
-    "options": [
-      "B. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22_2",
-    "question": "access-list 100 permit ip any anyline vty 0 15 ip access-group 100 in",
-    "options": [
-      "C. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q23",
-    "question": "access-list 100 permit ip any anyinterface GigabitEthernet0/0 ip access-group 100 in",
-    "options": [
-      "D. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q23_2",
-    "question": "access-list 100 permit ip any anyline vty 0 15 ip access-group 100 in",
-    "options": [],
     "answer": "B",
     "explanation": ""
   },
@@ -435,7 +404,7 @@ const allQuestions = [
   },
   {
     "id": "NO.35",
-    "question": "左側から特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側から特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -514,7 +483,7 @@ const allQuestions = [
   },
   {
     "id": "NO.42",
-    "question": "[補足説明] 展示画像（Router1のルーティングテーブルの詳細や、対応するネットワーク条件を示す図など）の内容を確認してください。\nRouter1のルーティングテーブルには、10.10.10.0/24に到達するための複数の方法が示されています。デフォルトの管理距離が使用されます。左側のネットワーク条件を、Router1が右側で使用するルーティング方法にドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（Router1のルーティングテーブルの詳細や、対応するネットワーク条件を示す図など）の内容を確認してください。\nRouter1のルーティングテーブルには、10.10.10.0/24に到達するための複数の方法が示されています。デフォルトの管理距離が使用されます。左側のネットワーク条件を、Router1が右側で使用するルーティング方法にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -569,7 +538,7 @@ const allQuestions = [
   },
   {
     "id": "NO.47",
-    "question": "左側にあるIPv6アドレスを、右側の対応するアドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側にあるIPv6アドレスを、右側の対応するアドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -735,10 +704,10 @@ const allQuestions = [
   },
   {
     "id": "NO.61",
-    "question": "2台のルーター間でIPv4およびIPv6接続を設定します。IPv4には、192.168.1.0/24プライベートレンジから/28ネットワークを使用します。IPv6には、2001:0db8:aaaa::/48サブネットから最初の/64サブネットを使用します。\n1. ルーターR1およびR2のEthernet0/1を使用して、192.168.1.0/24レンジから次の利用可能な/28を設定します。ネットワーク192.168.1.0/28は利用できません。\n2. IPv4 /28サブネットの場合、ルーターR1は最初の利用可能なホストアドレスで設定する必要があります。\n3. IPv4 /28サブネットの場合、ルーターR2は最後の利用可能なホストアドレスで設定する必要があります。\n4. IPv6 /64サブネットの場合、トポロジで提供されたIPアドレス指定でルーターを設定します。\n5. ルーター間でIPv4およびIPv6アドレス範囲でpingが機能する必要があります。",
+    "question": "2台のルーター間でIPv4およびIPv6接続を設定します。IPv4には、192.168.1.0/24プライベートレンジから/28ネットワークを使用します。IPv6には、2001:0db8:aaaa::/48サブネットから最初の/64サブネットを使用します。\n1. ルーターR1およびR2のEthernet0/1を使用して、192.168.1.0/24レンジから次の利用可能な/28を設定します。ネットワーク192.168.1.0/28は利用できません。\n2. IPv4 /28サブネットの場合、ルーターR1は最初の利用可能なホストアドレスで設定する必要があります。\n3. IPv4 /28サブネットの場合、ルーターR2は最後の利用可能なホストアドレスで設定する必要があります。\n4. IPv6 /64サブネットの場合、トポロジで提供されたIPアドレス指定でルーターを設定します。\n5. ルーター間でIPv4およびIPv6アドレス範囲でpingが機能する必要があります。\nAnswer:\n以下の解説を参照してください。\n*+>Explanation:\n回答は以下の設定のとおりです。\nR1にて\nconfig terminal\nipv6 unicast-routing\ninter eth0/1\nip addre 192.168.1.1 255.255.255.240\nipv6 addre 2001:db8:aaaa::1/64\nnot shut\nend\ncopy running start\nR2にて\nconfig terminal\nipv6 unicast-routing\ninter eth0/1\nip address 192.168.1.14 255.255.255.240\nipv6 address 2001:db8:aaaa::2/64\nnot shut\nend\ncopy running start\n---------------------\nR1からのテスト\nping ipv6 2001:db8:aaaa::1\nR2からのテスト\nping ipv6 2001:db8:aaaa::2",
     "options": [],
-    "answer": "以下の解説を参照してください。",
-    "explanation": "回答は以下の設定のとおりです。\nR1にて\nconfig terminal\nipv6 unicast-routing\ninter eth0/1\nip addre 192.168.1.1 255.255.255.240\nipv6 addre 2001:db8:aaaa::1/64\nnot shut\nend\ncopy running start\nR2にて\nconfig terminal\nipv6 unicast-routing\ninter eth0/1\nip address 192.168.1.14 255.255.255.240\nipv6 address 2001:db8:aaaa::2/64\nnot shut\nend\ncopy running start\n---------------------\nR1からのテスト\nping ipv6 2001:db8:aaaa::1\nR2からのテスト\nping ipv6 2001:db8:aaaa::2"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.62",
@@ -815,7 +784,7 @@ const allQuestions = [
   },
   {
     "id": "NO.68",
-    "question": "Rapid PVST+の転送状態アクションを左から右へドラッグアンドドロップしてください。すべてのアクションが使用されるわけではありません。",
+    "question": "Rapid PVST+の転送状態アクションを左から右へドラッグアンドドロップしてください。すべてのアクションが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -835,7 +804,7 @@ const allQuestions = [
   },
   {
     "id": "NO.70",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -866,7 +835,7 @@ const allQuestions = [
   },
   {
     "id": "NO.73",
-    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（ドラッグ＆ドロップの項目とプロトコルリスト）の内容を確認してください。",
+    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（ドラッグ＆ドロップの項目とプロトコルリスト）の内容を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -969,7 +938,7 @@ const allQuestions = [
   },
   {
     "id": "NO.82",
-    "question": "左側のWi-Fi用語を右側の説明にドラッグアンドドロップしてください。\n[補足説明] 左側のWi-Fi用語リストと右側の説明リストを確認し、それぞれを対応付けてください。",
+    "question": "左側のWi-Fi用語を右側の説明にドラッグアンドドロップしてください。\n[補足説明] 左側のWi-Fi用語リストと右側の説明リストを確認し、それぞれを対応付けてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -988,7 +957,7 @@ const allQuestions = [
   },
   {
     "id": "NO.84",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\n[補足説明] 左側の特性リストと右側のIPv6アドレスタイプリストの内容を確認してください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\n[補足説明] 左側の特性リストと右側のIPv6アドレスタイプリストの内容を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1031,10 +1000,10 @@ const allQuestions = [
   },
   {
     "id": "NO.88",
-    "question": "3つのルータ間のIP接続は設定済みです。OSPFネイバーシップを確立する必要があります。\n1. R1とR2のルータIDを、両者間で共有されているリンクのインターフェースIPアドレスを使用して設定します。\n2. R1およびR3に面するR2のリンクに最大値を設定します。R2がDRになる必要があります。R2に面するR1とR3のリンクは、DR選出のためのデフォルトのOSPF設定を維持する必要があります。OSPFプロセスをクリアした後、設定を確認してください。\n3. ホストワイルドカードマスクを使用して、3つのルータすべてにそれぞれのLoopback1ネットワークをアドバタイズするように設定します。\n4. R1とR3間のリンクで、他のOSPFルータを追加する機能を無効化するように設定します。",
+    "question": "3つのルータ間のIP接続は設定済みです。OSPFネイバーシップを確立する必要があります。\n1. R1とR2のルータIDを、両者間で共有されているリンクのインターフェースIPアドレスを使用して設定します。\n2. R1およびR3に面するR2のリンクに最大値を設定します。R2がDRになる必要があります。R2に面するR1とR3のリンクは、DR選出のためのデフォルトのOSPF設定を維持する必要があります。OSPFプロセスをクリアした後、設定を確認してください。\n3. ホストワイルドカードマスクを使用して、3つのルータすべてにそれぞれのLoopback1ネットワークをアドバタイズするように設定します。\n4. R1とR3間のリンクで、他のOSPFルータを追加する機能を無効化するように設定します。\nAnswer:\n以下の解説を参照してください。\n*+>Explanation:\n設定は以下の通りです。\non R1\nconf terminal\ninterface Loopback0\nip address 10.10.1.1 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.1.1 255.255.255.0\n!\ninterface Ethernet0/0\nno shut\nip address 10.10.12.1 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/1\nno shut\nip address 10.10.13.1 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nrouter-id 10.10.12.1\nnetwork 10.10.1.1 0.0.0.0 area 0\nnetwork 192.168.1.0 0.0.0.255 area 0\n!\ncopy run star\n---------------------------------------\nOn R2\nconf terminal\ninterface Loopback0\nip address 10.10.2.2 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.2.2 255.255.255.0\n!\ninterface Ethernet0/0\nno shut\nip address 10.10.12.2 255.255.255.0\nip ospf priority 255\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/2\nno shut\nip address 10.10.23.2 255.255.255.0\nip ospf priority 255\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nnetwork 10.10.2.2 0.0.0.0 area 0\nnetwork 192.168.2.0 0.0.0.255 area 0\n!\ncopy runs start\n-----------------------\nOn R3\nconf ter\ninterface Loopback0\nip address 10.10.3.3 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.3.3 255.255.255.0\n!\ninterface Ethernet0/1\nno shut\nip address 10.10.13.3 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/2\nno shut\nip address 10.10.23.3 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nnetwork 10.10.3.3 0.0.0.0 area 0\nnetwork 192.168.3.0 0.0.0.255 area 0\n!\ncopy run start\n!",
     "options": [],
-    "answer": "以下の解説を参照してください。",
-    "explanation": "設定は以下の通りです。\non R1\nconf terminal\ninterface Loopback0\nip address 10.10.1.1 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.1.1 255.255.255.0\n!\ninterface Ethernet0/0\nno shut\nip address 10.10.12.1 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/1\nno shut\nip address 10.10.13.1 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nrouter-id 10.10.12.1\nnetwork 10.10.1.1 0.0.0.0 area 0\nnetwork 192.168.1.0 0.0.0.255 area 0\n!\ncopy run star\n---------------------------------------\nOn R2\nconf terminal\ninterface Loopback0\nip address 10.10.2.2 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.2.2 255.255.255.0\n!\ninterface Ethernet0/0\nno shut\nip address 10.10.12.2 255.255.255.0\nip ospf priority 255\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/2\nno shut\nip address 10.10.23.2 255.255.255.0\nip ospf priority 255\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nnetwork 10.10.2.2 0.0.0.0 area 0\nnetwork 192.168.2.0 0.0.0.255 area 0\n!\ncopy runs start\n-----------------------\nOn R3\nconf ter\ninterface Loopback0\nip address 10.10.3.3 255.255.255.255\n!\ninterface Loopback1\nip address 192.168.3.3 255.255.255.0\n!\ninterface Ethernet0/1\nno shut\nip address 10.10.13.3 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\ninterface Ethernet0/2\nno shut\nip address 10.10.23.3 255.255.255.0\nip ospf 1 area 0\nduplex auto\n!\nrouter ospf 1\nnetwork 10.10.3.3 0.0.0.0 area 0\nnetwork 192.168.3.0 0.0.0.255 area 0\n!\ncopy run start\n!"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.89",
@@ -1074,7 +1043,7 @@ const allQuestions = [
   },
   {
     "id": "NO.92",
-    "question": "AAAをサポートするプロトコルの機能を左から右のプロトコルにドラッグアンドドロップしなさい。",
+    "question": "AAAをサポートするプロトコルの機能を左から右のプロトコルにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1165,7 +1134,7 @@ const allQuestions = [
   },
   {
     "id": "NO.100",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1270,7 +1239,7 @@ const allQuestions = [
   },
   {
     "id": "NO.109",
-    "question": "",
+    "question": "Answer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1338,7 +1307,7 @@ const allQuestions = [
   },
   {
     "id": "NO.115",
-    "question": "[補足説明] 展示画像（ドラッグ＆ドロップの項目と対応表など）の内容を確認してください。左側の一般的な機能を、右側の対応するネットワークトポロジアーキテクチャレイヤーにドラッグ＆ドロップしてください。すべての一般的な機能が使用されるわけではありません。",
+    "question": "[補足説明] 展示画像（ドラッグ＆ドロップの項目と対応表など）の内容を確認してください。左側の一般的な機能を、右側の対応するネットワークトポロジアーキテクチャレイヤーにドラッグ＆ドロップしてください。すべての一般的な機能が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1538,7 +1507,7 @@ const allQuestions = [
   },
   {
     "id": "NO.132",
-    "question": "左側のコンフィグレーション管理用語を右側の説明にドラッグ＆ドロップしてください。すべての用語が使用されるわけではありません。",
+    "question": "左側のコンフィグレーション管理用語を右側の説明にドラッグ＆ドロップしてください。すべての用語が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1629,10 +1598,10 @@ const allQuestions = [
   },
   {
     "id": "NO.140",
-    "question": "IP接続性とOSPFは、必要に応じてすべてのデバイスに事前設定されています。IPアドレッシングまたはOSPFに変更を加えないでください。会社のポリシーでは、ロードバランシングまたはフローティングスタティックを使用しない冗長性の場合を除き、スタティックルートを設定する際に接続インターフェースとネクストホップを使用します。インターネット上のサブネット172.20.20.128/25と、SW1に接続されているLAN 192.168.0.0/24の間で接続を確立する必要があります。\n1. ルータR2で、スイッチSW1のLANサブネットへの到達可能性を設定します。\n2. ルータR1で、インターネットサブネットへのデフォルト到達可能性を設定します。\n3. ルータR1とR2間の両方の冗長リンクを考慮し、インターネットサブネットに到達するための単一のスタティックルートをルータR2に設定します。ルータR2でデフォルトルートは許可されません。\n4. ルータR1で、スイッチSW1のLANサブネットへのスタティックルートを設定します。この際、プライマリリンクはEthernet0/1を介し、バックアップリンクはEthernet0/2を介してフローティングルートを使用する必要があります。必要に応じて、最小の管理距離値を使用してください。",
+    "question": "IP接続性とOSPFは、必要に応じてすべてのデバイスに事前設定されています。IPアドレッシングまたはOSPFに変更を加えないでください。会社のポリシーでは、ロードバランシングまたはフローティングスタティックを使用しない冗長性の場合を除き、スタティックルートを設定する際に接続インターフェースとネクストホップを使用します。インターネット上のサブネット172.20.20.128/25と、SW1に接続されているLAN 192.168.0.0/24の間で接続を確立する必要があります。\n1. ルータR2で、スイッチSW1のLANサブネットへの到達可能性を設定します。\n2. ルータR1で、インターネットサブネットへのデフォルト到達可能性を設定します。\n3. ルータR1とR2間の両方の冗長リンクを考慮し、インターネットサブネットに到達するための単一のスタティックルートをルータR2に設定します。ルータR2でデフォルトルートは許可されません。\n4. ルータR1で、スイッチSW1のLANサブネットへのスタティックルートを設定します。この際、プライマリリンクはEthernet0/1を介し、バックアップリンクはEthernet0/2を介してフローティングルートを使用する必要があります。必要に応じて、最小の管理距離値を使用してください。\nAnswer:\nSee the Explanation below.\n*+>Explanation:\n以下にコンフィグレーションを示します。\n\nR2にて:\nEnable\nConf t\nIp route 192.168.1.0 255.255.255.0 10.10.31.1\n\nR1にて:\nEnable\nConf t\nIp route 0.0.0.0 0.0.0.0 10.10.13.3\n\nR2にて:\nIp route 172.20.20.128 255.255.255.128 e0/2\nIp route 172.20.20.128 255.255.255.128 e0/1\n\nR1にて:\nIp route 192.168.0.0 255.255.255.0 e0/1\nIp route 192.168.0.0 255.255.255.0 10.10.12.2 3\n\nこれらのコマンドのいずれかを使用して、すべてのルータで設定を保存してください: Do wr または Copy run start",
     "options": [],
-    "answer": "See the Explanation below.",
-    "explanation": "以下にコンフィグレーションを示します。\n\nR2にて:\nEnable\nConf t\nIp route 192.168.1.0 255.255.255.0 10.10.31.1\n\nR1にて:\nEnable\nConf t\nIp route 0.0.0.0 0.0.0.0 10.10.13.3\n\nR2にて:\nIp route 172.20.20.128 255.255.255.128 e0/2\nIp route 172.20.20.128 255.255.255.128 e0/1\n\nR1にて:\nIp route 192.168.0.0 255.255.255.0 e0/1\nIp route 192.168.0.0 255.255.255.0 10.10.12.2 3\n\nこれらのコマンドのいずれかを使用して、すべてのルータで設定を保存してください: Do wr または Copy run start"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.141",
@@ -1868,14 +1837,14 @@ const allQuestions = [
   },
   {
     "id": "NO.160",
-    "question": "デバイス管理技術のユースケースを左側から対応する項目にドラッグアンドドロップしてください。",
+    "question": "デバイス管理技術のユースケースを左側から対応する項目にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.161",
-    "question": "左側のIPv6アドレスを右側のタイプにドラッグアンドドロップしてください。",
+    "question": "左側のIPv6アドレスを右側のタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -1906,7 +1875,7 @@ const allQuestions = [
   },
   {
     "id": "NO.164",
-    "question": "DNSルックアップのコンポーネントを左から右の機能にドラッグアンドドロップしなさい。",
+    "question": "DNSルックアップのコンポーネントを左から右の機能にドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2121,33 +2090,10 @@ const allQuestions = [
     "question": "[補足説明] 展示画像（ネットワークトポロジ図など）を確認してください。スイッチとPCの設定は完了しています。\nVLAN 2とVLAN 3が相互に通信できるようにするには、どの設定を適用する必要がありますか？",
     "options": [
       "A. interface GigabitEthernet0/0 ip address 10.10.2.10 255.255.252.0",
-      "B. interface GigabitEthernet0/0.3 encapsulation dot1"
+      "B. interface GigabitEthernet0/0.3 encapsulation dot1Q 3 native ip address 10.10.2.10 255.255.252.0",
+      "C. interface GigabitEthernet0/0.10 encapsulation dot1Q 3",
+      "D. interface GigabitEthernet0/0.3 encapsulation dot1Q 10 ip address 10.10.2.10 255.255.252.0"
     ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q3",
-    "question": "native ip address 10.10.2.10 255.255.252.0",
-    "options": [
-      "C. interface GigabitEthernet0/0.10 encapsulation dot1"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q3_2",
-    "question": "",
-    "options": [
-      "D. interface GigabitEthernet0/0.3 encapsulation dot1"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q10",
-    "question": "ip address 10.10.2.10 255.255.252.0",
-    "options": [],
     "answer": "B",
     "explanation": ""
   },
@@ -2177,14 +2123,14 @@ const allQuestions = [
   },
   {
     "id": "NO.185",
-    "question": "左側のQoS輻輳管理用語を右側の説明にドラッグ＆ドロップしてください。",
+    "question": "左側のQoS輻輳管理用語を右側の説明にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.186",
-    "question": "左側のWLANコンポーネントを右側の正しい説明にドラッグアンドドロップしてください。",
+    "question": "左側のWLANコンポーネントを右側の正しい説明にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2480,7 +2426,7 @@ const allQuestions = [
   },
   {
     "id": "NO.211",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図や学習済みプレフィックスのリストなど）の内容を確認してください。\n左側から学習済みプレフィックスを右側のサブネットマスクにドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図や学習済みプレフィックスのリストなど）の内容を確認してください。\n左側から学習済みプレフィックスを右側のサブネットマスクにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2571,7 +2517,7 @@ const allQuestions = [
   },
   {
     "id": "NO.219",
-    "question": "左側のDHCPスヌーピング用語を右側の説明に対応させてドラッグアンドドロップしてください。",
+    "question": "左側のDHCPスヌーピング用語を右側の説明に対応させてドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2664,7 +2610,7 @@ const allQuestions = [
   },
   {
     "id": "NO.227",
-    "question": "左側のIPv6アドレスタイプを右側の説明にドラッグアンドドロップしなさい。",
+    "question": "左側のIPv6アドレスタイプを右側の説明にドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2707,7 +2653,7 @@ const allQuestions = [
   },
   {
     "id": "NO.231",
-    "question": "ドラッグアンドドロップで、左側のCisco IOS攻撃軽減機能を、右側のそれらが軽減するネットワーク攻撃の種類に配置してください。",
+    "question": "ドラッグアンドドロップで、左側のCisco IOS攻撃軽減機能を、右側のそれらが軽減するネットワーク攻撃の種類に配置してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2847,7 +2793,7 @@ const allQuestions = [
   },
   {
     "id": "NO.243",
-    "question": "左側のQoS用語を右側の説明にドラッグアンドドロップしてください。",
+    "question": "左側のQoS用語を右側の説明にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -2974,10 +2920,10 @@ const allQuestions = [
   },
   {
     "id": "NO.254",
-    "question": "すべての物理ケーブル接続は完了しています。会社は32の新しいサイトを展開する計画です。\nこれらのサイトではIPv4とIPv6の両方のネットワークを利用します。\n1 . サブネット要件を満たし、ホスト数を最大化するために172.25.0.0/16をサブネット化する\n2番目のサブネットを使用する\n* Sw101のe0/0に最初の使用可能なIPアドレスを割り当てる\n* Sw102のe0/0に最後の使用可能なIPアドレスを割り当てる\n2. サブネット要件を満たし、ホスト数を最大化するためにサブネット化する\n2番目のサブネットを使用する\n* Sw101のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てる\n* Sw102のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てる\nガイドライン\nこれは仮想デバイスでタスクが実行されるラボ項目です。\n* このラボ項目のタスクを表示するには、「Tasks」タブを参照してください。\n* デバイスコンソールにアクセスしてタスクを実行するには、「Topology」タブを参照してください。\n* コンソールウィンドウの上のデバイスアイコンをクリックするか、タブを使用して、必要なすべてのデバイスのコンソールアクセスが可能です。\n* 必要な事前設定はすべて適用済みです。\n* いずれのデバイスでもイネーブルパスワードまたはホスト名を変更しないでください。\n* 次の項目に進む前に、設定をNVRAMに保存してください。\n* このラボを提出し、次の質問に進むには、画面下部の「Next」をクリックしてください。\n* 「Next」をクリックすると、ラボは閉じられ、再度開くことはできません。",
+    "question": "すべての物理ケーブル接続は完了しています。会社は32の新しいサイトを展開する計画です。\nこれらのサイトではIPv4とIPv6の両方のネットワークを利用します。\n1 . サブネット要件を満たし、ホスト数を最大化するために172.25.0.0/16をサブネット化する\n2番目のサブネットを使用する\n* Sw101のe0/0に最初の使用可能なIPアドレスを割り当てる\n* Sw102のe0/0に最後の使用可能なIPアドレスを割り当てる\n2. サブネット要件を満たし、ホスト数を最大化するためにサブネット化する\n2番目のサブネットを使用する\n* Sw101のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てる\n* Sw102のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てる\nガイドライン\nこれは仮想デバイスでタスクが実行されるラボ項目です。\n* このラボ項目のタスクを表示するには、「Tasks」タブを参照してください。\n* デバイスコンソールにアクセスしてタスクを実行するには、「Topology」タブを参照してください。\n* コンソールウィンドウの上のデバイスアイコンをクリックするか、タブを使用して、必要なすべてのデバイスのコンソールアクセスが可能です。\n* 必要な事前設定はすべて適用済みです。\n* いずれのデバイスでもイネーブルパスワードまたはホスト名を変更しないでください。\n* 次の項目に進む前に、設定をNVRAMに保存してください。\n* このラボを提出し、次の質問に進むには、画面下部の「Next」をクリックしてください。\n* 「Next」をクリックすると、ラボは閉じられ、再度開くことはできません。\nAnswer:\n解答についてはExplanationを参照してください。\n*+>Explanation:\nサブネット要件を満たし、ホスト数を最大化するために172.25.0.0/16をサブネット化するには、32サイト分の十分なサブネットを作成するために、アドレスのホスト部分から何ビットを借りる必要があるかを決定する必要があります。32は2^5なので、5ビットを借りる必要があり、新しいサブネットマスクは/21または255.255.248.0になります。2番目のサブネットを見つけるには、5番目のビットの値（32）をネットワークアドレスの第3オクテット（0）に追加し、172.25.32.0/21が2番目のサブネットとなります。このサブネットで最初の使用可能なIPアドレスは172.25.32.1で、最後の使用可能なIPアドレスは172.25.39.254です。\nSw101のe0/0に最初の使用可能なIPアドレスを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります。\nSw101#configure terminal\nSw101(config)#interface e0/0\nSw101(config-if)#ip address 172.25.32.1 255.255.248.0\nSw101(config-if)#no shutdown\nSw101(config-if)#end\nSw102のe0/0に最後の使用可能なIPアドレスを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります。\nSw102#configure terminal\nSw102(config)#interface e0/0\nSw102(config-if)#ip address 172.25.39.254 255.255.248.0\nSw102(config-if)#no shutdown\nSw102(config-if)#end\nサブネット要件を満たし、ホスト数を最大化するためにIPv6 GUAをサブネット化するには、32サイト分の十分なサブネットを作成するために、アドレスのインターフェース識別子部分から何ビットを借りる必要があるかを決定する必要があります。32は2^5なので、5ビットを借りる必要があり、新しいプレフィックス長は/69またはffff:ffff:ffff:fff8::/69になります（IPv6 GUAがデフォルトで/64プレフィックスを持っていると仮定）。2番目のサブネットを見つけるには、5番目のビットの値（32）をネットワークアドレスの第4ヘクステット（0000）に追加し、xxxx:xxxx:xxxx:0020::/69が2番目のサブネットとなります（ここでxxxx:xxxx:xxxxはIPv6 GUAプレフィックスです）。このサブネットの最初と最後のIPv6アドレスは、それぞれxxxx:xxxx:xxxx:0020::1とxxxx:xxxx:xxxx:0027:ffff:ffff:ffff:fffeです。\nSw101のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります（IPv6 GUAプレフィックスが2001:db8::/64であると仮定）。\nSw101#configure terminal\nSw101(config)#interface e0/0\nSw101(config-if)#ipv6 address 2001:db8::20::1/69\nSw101(config-if)#no shutdown\nSw101(config-if)#end\nSw102のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります（IPv6 GUAプレフィックスが2001:db8::/64であると仮定）。\nSw102#configure terminal\nSw102(config)#interface e0/0\nSw102(config-if)#ipv6 address 2001:db8::27::fffe/69\nSw102(config-if)#no shutdown\nSw102(config-if)#end",
     "options": [],
-    "answer": "解答についてはExplanationを参照してください。",
-    "explanation": "サブネット要件を満たし、ホスト数を最大化するために172.25.0.0/16をサブネット化するには、32サイト分の十分なサブネットを作成するために、アドレスのホスト部分から何ビットを借りる必要があるかを決定する必要があります。32は2^5なので、5ビットを借りる必要があり、新しいサブネットマスクは/21または255.255.248.0になります。2番目のサブネットを見つけるには、5番目のビットの値（32）をネットワークアドレスの第3オクテット（0）に追加し、172.25.32.0/21が2番目のサブネットとなります。このサブネットで最初の使用可能なIPアドレスは172.25.32.1で、最後の使用可能なIPアドレスは172.25.39.254です。\nSw101のe0/0に最初の使用可能なIPアドレスを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります。\nSw101#configure terminal\nSw101(config)#interface e0/0\nSw101(config-if)#ip address 172.25.32.1 255.255.248.0\nSw101(config-if)#no shutdown\nSw101(config-if)#end\nSw102のe0/0に最後の使用可能なIPアドレスを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります。\nSw102#configure terminal\nSw102(config)#interface e0/0\nSw102(config-if)#ip address 172.25.39.254 255.255.248.0\nSw102(config-if)#no shutdown\nSw102(config-if)#end\nサブネット要件を満たし、ホスト数を最大化するためにIPv6 GUAをサブネット化するには、32サイト分の十分なサブネットを作成するために、アドレスのインターフェース識別子部分から何ビットを借りる必要があるかを決定する必要があります。32は2^5なので、5ビットを借りる必要があり、新しいプレフィックス長は/69またはffff:ffff:ffff:fff8::/69になります（IPv6 GUAがデフォルトで/64プレフィックスを持っていると仮定）。2番目のサブネットを見つけるには、5番目のビットの値（32）をネットワークアドレスの第4ヘクステット（0000）に追加し、xxxx:xxxx:xxxx:0020::/69が2番目のサブネットとなります（ここでxxxx:xxxx:xxxxはIPv6 GUAプレフィックスです）。このサブネットの最初と最後のIPv6アドレスは、それぞれxxxx:xxxx:xxxx:0020::1とxxxx:xxxx:xxxx:0027:ffff:ffff:ffff:fffeです。\nSw101のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります（IPv6 GUAプレフィックスが2001:db8::/64であると仮定）。\nSw101#configure terminal\nSw101(config)#interface e0/0\nSw101(config-if)#ipv6 address 2001:db8::20::1/69\nSw101(config-if)#no shutdown\nSw101(config-if)#end\nSw102のe0/0に一意の64ビットインターフェース識別子を持つIPv6 GUAを割り当てるには、デバイスコンソールで以下のコマンドを入力する必要があります（IPv6 GUAプレフィックスが2001:db8::/64であると仮定）。\nSw102#configure terminal\nSw102(config)#interface e0/0\nSw102(config-if)#ipv6 address 2001:db8::27::fffe/69\nSw102(config-if)#no shutdown\nSw102(config-if)#end"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.255",
@@ -3076,7 +3022,7 @@ const allQuestions = [
   },
   {
     "id": "NO.263",
-    "question": "左側のTCP/IPプロトコルを、右側の主要なトランスミッションプロトコルにドラッグアンドドロップしてください。",
+    "question": "左側のTCP/IPプロトコルを、右側の主要なトランスミッションプロトコルにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3132,7 +3078,7 @@ const allQuestions = [
   },
   {
     "id": "NO.268",
-    "question": "左側のデバイスの動作を、右側の対応するHSRPスレートにドラッグ＆ドロップしてください。\n[補足説明] 左側に示されたデバイスの動作リストと、右側に示されたHSRPの役割（例：アクティブ、スタンバイなど）を示す領域を確認してください。",
+    "question": "左側のデバイスの動作を、右側の対応するHSRPスレートにドラッグ＆ドロップしてください。\n[補足説明] 左側に示されたデバイスの動作リストと、右側に示されたHSRPの役割（例：アクティブ、スタンバイなど）を示す領域を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3335,10 +3281,10 @@ const allQuestions = [
   },
   {
     "id": "NO.285",
-    "question": "3台のルータ間の接続が確立されており、実装を完了するために、提示された順序でIPサービスを設定する必要があります。割り当てられたタスクには、NAT、NTP、DHCP、およびSSHサービスの設定が含まれます。\n\n1. R3からR1のLoopbackアドレスに送信されるすべてのトラフィックは、R2でNATを設定する必要があります。すべての送信元アドレスは、R3からR2のEthernet0/0のIPアドレスに変換される必要があり、その際にNATという名前の標準アクセスリストのみを使用します。検証のため、R3から送信元とするR1のLoopbackアドレスへのpingが成功する必要があります。NVI NAT設定は使用しないでください。\n2. R1をNTPサーバーとして、R2をクライアントとして（ピアではなく）、R1のEthernet0/2インターフェースのIPアドレスを使用して設定します。NTPサーバーの時刻を2019年1月1日午前0時に設定します。\n3. R1を、TESTという名前のプールで、ネットワーク10.1.3.0/24のDHCPサーバーとして設定します。単一のコマンドを使用して、範囲からアドレス1-10を除外します。R3のインターフェースEthernet0/2には、DHCPを介して10.1.3.11のIPアドレスが割り当てられる必要があります。\n4. 他のリモート接続プロトコルによるアクセスを除外しつつ、R1からR3へのSSH接続を設定します。ユーザーrootとパスワードCiscoによるアクセスは、R3ルータ上でRSAおよび1024ビットを使用して設定する必要があります。R1ルータから宛先アドレス10.1.3.11を使用してSSHセッションを確立することで接続を確認します。このタスクを実行するために、コンソールアクセスやライン番号を変更しないでください。",
+    "question": "3台のルータ間の接続が確立されており、実装を完了するために、提示された順序でIPサービスを設定する必要があります。割り当てられたタスクには、NAT、NTP、DHCP、およびSSHサービスの設定が含まれます。\n\n1. R3からR1のLoopbackアドレスに送信されるすべてのトラフィックは、R2でNATを設定する必要があります。すべての送信元アドレスは、R3からR2のEthernet0/0のIPアドレスに変換される必要があり、その際にNATという名前の標準アクセスリストのみを使用します。検証のため、R3から送信元とするR1のLoopbackアドレスへのpingが成功する必要があります。NVI NAT設定は使用しないでください。\n2. R1をNTPサーバーとして、R2をクライアントとして（ピアではなく）、R1のEthernet0/2インターフェースのIPアドレスを使用して設定します。NTPサーバーの時刻を2019年1月1日午前0時に設定します。\n3. R1を、TESTという名前のプールで、ネットワーク10.1.3.0/24のDHCPサーバーとして設定します。単一のコマンドを使用して、範囲からアドレス1-10を除外します。R3のインターフェースEthernet0/2には、DHCPを介して10.1.3.11のIPアドレスが割り当てられる必要があります。\n4. 他のリモート接続プロトコルによるアクセスを除外しつつ、R1からR3へのSSH接続を設定します。ユーザーrootとパスワードCiscoによるアクセスは、R3ルータ上でRSAおよび1024ビットを使用して設定する必要があります。R1ルータから宛先アドレス10.1.3.11を使用してSSHセッションを確立することで接続を確認します。このタスクを実行するために、コンソールアクセスやライン番号を変更しないでください。\n\nAnswer:\nSee the Explanation below.\n*+>Explanation:\n回答は以下の設定の通りです。\nconf t\nR1(config)#ntp master 1\nR2(config)#ntp server 10.1.2.1\nExit\nRouter#clock set 00:00:00 jan 1 2019\nip dhcp pool TEST\nnetwork 10.1.3.0 255.255.255.0\nip dhcp exluded-address 10.1.3.1 10.1.3.10\nR3(config)#int e0/3\nR3(config)#int e0/2\nip address dhcp\nno shut\ncrypto key generate RSA\n1024\nCopy run start",
     "options": [],
-    "answer": "See the Explanation below.",
-    "explanation": "回答は以下の設定の通りです。\nconf t\nR1(config)#ntp master 1\nR2(config)#ntp server 10.1.2.1\nExit\nRouter#clock set 00:00:00 jan 1 2019\nip dhcp pool TEST\nnetwork 10.1.3.0 255.255.255.0\nip dhcp exluded-address 10.1.3.1 10.1.3.10\nR3(config)#int e0/3\nR3(config)#int e0/2\nip address dhcp\nno shut\ncrypto key generate RSA\n1024\nCopy run start"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.286",
@@ -3366,7 +3312,7 @@ const allQuestions = [
   },
   {
     "id": "NO.288",
-    "question": "左側のHTTP REST APIコールメソッドと、右側でそれらが実行するアクションをドラッグアンドドロップで対応付けてください。",
+    "question": "左側のHTTP REST APIコールメソッドと、右側でそれらが実行するアクションをドラッグアンドドロップで対応付けてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3409,7 +3355,7 @@ const allQuestions = [
   },
   {
     "id": "NO.292",
-    "question": "[補足説明] 展示画像（ネットワーク設定パラメータに関する図など）の内容を確認してください。\nエンジニアは、クライアントワークステーションのネットワーク設定パラメータを確認し、チームリーダーに報告するよう指示されています。左側のノード識別子を右側のネットワークパラメータにドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（ネットワーク設定パラメータに関する図など）の内容を確認してください。\nエンジニアは、クライアントワークステーションのネットワーク設定パラメータを確認し、チームリーダーに報告するよう指示されています。左側のノード識別子を右側のネットワークパラメータにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3500,10 +3446,10 @@ const allQuestions = [
   },
   {
     "id": "NO.300",
-    "question": "左側のAAA用語を右側の説明に対応させてドラッグアンドドロップしなさい。",
+    "question": "左側のAAA用語を右側の説明に対応させてドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:\n1-1, 2-4, 3-3, 4-2",
     "options": [],
     "answer": "",
-    "explanation": "1-1, 2-4, 3-3, 4-2"
+    "explanation": ""
   },
   {
     "id": "NO.301",
@@ -3519,7 +3465,7 @@ const allQuestions = [
   },
   {
     "id": "NO.302",
-    "question": "エンジニアは、コアルータに10.200.0.2にあるバックアップルータへのフローティングスタティックデフォルトルートを設定する必要があります。",
+    "question": "エンジニアは、コアルータに10.200.0.2にあるバックアップルータへのフローティングスタティックデフォルトルートを設定する必要があります。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3610,10 +3556,10 @@ const allQuestions = [
   },
   {
     "id": "NO.310",
-    "question": "4台のルータ間の接続は確立されています。実装を完了するには、提示された順序でIP接続を設定する必要があります。ダイナミックルーティングプロトコルは使用しません。\n1. ホストルートを使用してスタティックルーティングを設定し、ソースIP 209.165.200.230を使用して、ルータR3からルータR1のLoopbackアドレスへの接続を確立します。\n2. ルータR2に、ルータR4宛てのIPv4デフォルトルートを設定します。\n3. ルータR2に、ルータR4宛てのIPv6デフォルトルータを設定します。",
+    "question": "4台のルータ間の接続は確立されています。実装を完了するには、提示された順序でIP接続を設定する必要があります。ダイナミックルーティングプロトコルは使用しません。\n1. ホストルートを使用してスタティックルーティングを設定し、ソースIP 209.165.200.230を使用して、ルータR3からルータR1のLoopbackアドレスへの接続を確立します。\n2. ルータR2に、ルータR4宛てのIPv4デフォルトルートを設定します。\n3. ルータR2に、ルータR4宛てのIPv6デフォルトルータを設定します。\nAnswer:\n以下の解説を参照してください。\n*+>Explanation:\n設定は以下の通りです。\n1.- R3にて\nconfig terminal\nip route 192.168.1.1 255.255.255.255 209.165.200.229\nend\ncopy running start\n2.- R2にて\nconfig terminal\nip route 0.0.0.0 0.0.0.0 209.165.202.130\nend\ncopy running start\n3.- R2にて\nconfig terminal\nipv6 route ::/0 2001:db8:abcd::2\nend\ncopy running start",
     "options": [],
-    "answer": "以下の解説を参照してください。",
-    "explanation": "設定は以下の通りです。\n1.- R3にて\nconfig terminal\nip route 192.168.1.1 255.255.255.255 209.165.200.229\nend\ncopy running start\n2.- R2にて\nconfig terminal\nip route 0.0.0.0 0.0.0.0 209.165.202.130\nend\ncopy running start\n3.- R2にて\nconfig terminal\nipv6 route ::/0 2001:db8:abcd::2\nend\ncopy running start"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.311",
@@ -3726,7 +3672,7 @@ const allQuestions = [
   },
   {
     "id": "NO.320",
-    "question": "左側のワイヤレスアーキテクチャに関する事実を、右側のアクセスポイントの種類にドラッグアンドドロップしてください。\nすべてのオプションが使用されるわけではありません。",
+    "question": "左側のワイヤレスアーキテクチャに関する事実を、右側のアクセスポイントの種類にドラッグアンドドロップしてください。\nすべてのオプションが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3818,7 +3764,7 @@ const allQuestions = [
   },
   {
     "id": "NO.328",
-    "question": "標準的なDNSルックアップ操作の手順を左側から右側の順序にドラッグアンドドロップしてください。",
+    "question": "標準的なDNSルックアップ操作の手順を左側から右側の順序にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -3900,15 +3846,7 @@ const allQuestions = [
     "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。ルータ R4 のインターフェース FastEthernet0/1 に接続されたホストに対して DHCP アドレス指定を有効にする設定はどれですか？",
     "options": [
       "A. interface FastEthernet0/0ip helper-address 10.0.1.1iaccess-list 100 permit udp host 10.0.1.1 eq\nbootps host 10.148.2.1",
-      "B. interface FastEthernot0/1ip helper-address 10.0.1.1!access-list 100 permit tcp host 10.0.1.1 e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q67",
-    "question": "host\n10.148.2.1",
-    "options": [
+      "B. interface FastEthernot0/1ip helper-address 10.0.1.1!access-list 100 permit tcp host 10.0.1.1 eq 67\nhost\n10.148.2.1",
       "C. interface FastEthernet0/0ip helper-address 10.0.1.1Iaccess-list 100 permit host 10.0.1.1 host\n10.148.2.1 eq bootps",
       "D. interface FastEthernet0/1ip helper-address 10.0.1.1!access-list 100 permit udp host 10.0.1.1 eq\nbootps host 10.148.2.1"
     ],
@@ -4026,7 +3964,7 @@ const allQuestions = [
   },
   {
     "id": "NO.345",
-    "question": "左側のアプリケーションプロトコルを、それが使用する右側のトランスポートプロトコルにドラッグ＆ドロップしてください。",
+    "question": "左側のアプリケーションプロトコルを、それが使用する右側のトランスポートプロトコルにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -4165,7 +4103,7 @@ const allQuestions = [
   },
   {
     "id": "NO.357",
-    "question": "左側のネットワークに関する記述を、右側の対応するネットワークタイプにドラッグアンドドロップしてください。",
+    "question": "左側のネットワークに関する記述を、右側の対応するネットワークタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -4235,10 +4173,10 @@ const allQuestions = [
   },
   {
     "id": "NO.363",
-    "question": "3台のスイッチをレイヤ2接続用に設定する必要があります。セキュリティ上の理由から、会社は指定されたVLANのみがそれぞれのスイッチに設定され、スイッチ間のすべてのリンクで許可されることを要求しています。VTP設定は変更または削除しないでください。\nネットワークには、以下の2つのユーザー定義VLANを設定する必要があります。\nVLAN 110: MARKETING\nVLAN 210: FINANCE\n\n1.  指定されたスイッチにVLANを設定し、PCに接続されているインターフェースをアクセスポートとして割り当てます。\n2.  Sw1とSw2のe0/2インターフェースを、必要なVLANのみが許可される802.1qトランクとして設定します。\n3.  Sw2とSw3のe0/3インターフェースを、必要なVLANのみが許可される802.1qトランクとして設定します。",
+    "question": "3台のスイッチをレイヤ2接続用に設定する必要があります。セキュリティ上の理由から、会社は指定されたVLANのみがそれぞれのスイッチに設定され、スイッチ間のすべてのリンクで許可されることを要求しています。VTP設定は変更または削除しないでください。\nネットワークには、以下の2つのユーザー定義VLANを設定する必要があります。\nVLAN 110: MARKETING\nVLAN 210: FINANCE\n\n1.  指定されたスイッチにVLANを設定し、PCに接続されているインターフェースをアクセスポートとして割り当てます。\n2.  Sw1とSw2のe0/2インターフェースを、必要なVLANのみが許可される802.1qトランクとして設定します。\n3.  Sw2とSw3のe0/3インターフェースを、必要なVLANのみが許可される802.1qトランクとして設定します。\nAnswer:\nSee the Explanation below.\n*+>Explanation:\n解答は以下の設定の通りです。\nSw1\nenbale\nconfig t\nVlan 210\nName FINANCE\nInter e0/1\nSwitchport access vlan 210\ndo wr\nSw2\nEnable\nconfig t\nVlan 110\nName MARKITING\nInt e0/1\nSwitchport acees vlan 110\ndo wr\nSw3\nEnable\nconfig t\nVlan 110\nName MARKITING\nVlan 210\nName FINANCE\nInt e0/0\nSwitchport access vlan 110\nInt e0/1\nSwitchport access vlan 210\nSw1\nInt e0/1\nSwitchport allowed vlan 210\nSw2\nInt e0/2\nSwitchport trunk allowed vlan 210\nSw3\nInt e0/3\nSwitchport trunk allowed vlan 210\nSwitchport trunk allowed vlan 210,110",
     "options": [],
-    "answer": "See the Explanation below.",
-    "explanation": "解答は以下の設定の通りです。\nSw1\nenbale\nconfig t\nVlan 210\nName FINANCE\nInter e0/1\nSwitchport access vlan 210\ndo wr\nSw2\nEnable\nconfig t\nVlan 110\nName MARKITING\nInt e0/1\nSwitchport acees vlan 110\ndo wr\nSw3\nEnable\nconfig t\nVlan 110\nName MARKITING\nVlan 210\nName FINANCE\nInt e0/0\nSwitchport access vlan 110\nInt e0/1\nSwitchport access vlan 210\nSw1\nInt e0/1\nSwitchport allowed vlan 210\nSw2\nInt e0/2\nSwitchport trunk allowed vlan 210\nSw3\nInt e0/3\nSwitchport trunk allowed vlan 210\nSwitchport trunk allowed vlan 210,110"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.364",
@@ -4799,14 +4737,14 @@ const allQuestions = [
   },
   {
     "id": "NO.410",
-    "question": "ドラッグアンドドロップで、左のネットワークに関する記述を右の対応するネットワークタイプに配置してください。",
+    "question": "ドラッグアンドドロップで、左のネットワークに関する記述を右の対応するネットワークタイプに配置してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.411",
-    "question": "左側のIPプロトコル送信の説明を右側のIPトラフィックタイプにドラッグアンドドロップしなさい。\n[補足説明] 左側のIPプロトコル送信の説明を右側のIPトラフィックタイプにドラッグアンドドロップする問題であり、展示画像（ドラッグアンドドロップの要素を含む図）の内容を確認する必要があります。",
+    "question": "左側のIPプロトコル送信の説明を右側のIPトラフィックタイプにドラッグアンドドロップしなさい。\n[補足説明] 左側のIPプロトコル送信の説明を右側のIPトラフィックタイプにドラッグアンドドロップする問題であり、展示画像（ドラッグアンドドロップの要素を含む図）の内容を確認する必要があります。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -5115,7 +5053,7 @@ const allQuestions = [
   },
   {
     "id": "NO.437",
-    "question": "左側のAAAに関する記述を、右側の対応するAAAサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。",
+    "question": "左側のAAAに関する記述を、右側の対応するAAAサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -5309,15 +5247,8 @@ const allQuestions = [
       "A. ip access-list extended Services35 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
       "B. no ip access-list extended Servicesip access-list extended Services30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
       "C. ip access-list extended Servicespermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
-      "D. no ip access-list extended Servicesip access-list extended Servicespermit udp 10.0.0.0 0.255.255.255 any e"
+      "D. no ip access-list extended Servicesip access-list extended Servicespermit udp 10.0.0.0 0.255.255.255 any eq 53permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domaindeny ip any any log"
     ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q53",
-    "question": "permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domaindeny ip any any log",
-    "options": [],
     "answer": "A",
     "explanation": ""
   },
@@ -5396,14 +5327,14 @@ const allQuestions = [
   },
   {
     "id": "NO.460",
-    "question": "左にあるファイル転送プロトコルの説明を、右にある正しいプロトコルにドラッグアンドドロップしなさい。",
+    "question": "左にあるファイル転送プロトコルの説明を、右にある正しいプロトコルにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.461",
-    "question": "左にある特性を、右にあるIPv6アドレスタイプにドラッグアンドドロップしなさい。",
+    "question": "左にある特性を、右にあるIPv6アドレスタイプにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -5531,7 +5462,7 @@ const allQuestions = [
   },
   {
     "id": "NO.472",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nDC-1およびHQ-1ルータで、以下の要件に基づいてIPアドレス設定を完了する必要があります。\nDC-1 Gi1/0は/30における最後の使用可能アドレスであること\nDC-1 Gi1/1は/29における最初の使用可能アドレスであること\nDC-1 Gi1/2は/28における最後の使用可能アドレスであること\nHQ-1 Gil/3は/29における最後の使用可能アドレスであること\n左側にあるコマンドを右側の宛先インターフェースにドラッグ＆ドロップしてください。すべてのコマンドが使用されるわけではありません。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nDC-1およびHQ-1ルータで、以下の要件に基づいてIPアドレス設定を完了する必要があります。\nDC-1 Gi1/0は/30における最後の使用可能アドレスであること\nDC-1 Gi1/1は/29における最初の使用可能アドレスであること\nDC-1 Gi1/2は/28における最後の使用可能アドレスであること\nHQ-1 Gil/3は/29における最後の使用可能アドレスであること\n左側にあるコマンドを右側の宛先インターフェースにドラッグ＆ドロップしてください。すべてのコマンドが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -5790,7 +5721,7 @@ const allQuestions = [
   },
   {
     "id": "NO.494",
-    "question": "左側にあるネットワークの特性を右側にあるネットワークのタイプにドラッグアンドドロップしてください。\n[補足説明] 展示画像（左側のネットワーク特性リストと右側のネットワークタイプリスト）の内容を確認してください。",
+    "question": "左側にあるネットワークの特性を右側にあるネットワークのタイプにドラッグアンドドロップしてください。\n[補足説明] 展示画像（左側のネットワーク特性リストと右側のネットワークタイプリスト）の内容を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -5966,7 +5897,7 @@ const allQuestions = [
   },
   {
     "id": "NO.509",
-    "question": "エンジニアは、ユニキャスト、マルチキャスト、およびブロードキャストを転送するデバイスがポートをフラッディングできないようにするため、ポートセキュリティを備えたスイッチを設定するよう指示されています。ポートは、一度に2つのランダムなMACアドレスのみを許可するように設定する必要があります。必要な設定コマンドを左側から右側のシーケンスにドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。",
+    "question": "エンジニアは、ユニキャスト、マルチキャスト、およびブロードキャストを転送するデバイスがポートをフラッディングできないようにするため、ポートセキュリティを備えたスイッチを設定するよう指示されています。ポートは、一度に2つのランダムなMACアドレスのみを許可するように設定する必要があります。必要な設定コマンドを左側から右側のシーケンスにドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6156,7 +6087,7 @@ const allQuestions = [
   },
   {
     "id": "NO.525",
-    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグアンドドロップしてください。\n[補足説明] 展示画像（ドラッグアンドドロップの要素など）の内容を確認してください。",
+    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグアンドドロップしてください。\n[補足説明] 展示画像（ドラッグアンドドロップの要素など）の内容を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6333,14 +6264,14 @@ const allQuestions = [
   },
   {
     "id": "NO.540",
-    "question": "左側のネットワークプロトコルを右側の正しいトランスポートサービスにドラッグ＆ドロップしなさい。",
+    "question": "左側のネットワークプロトコルを右側の正しいトランスポートサービスにドラッグ＆ドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.541",
-    "question": "左側のAAAサービスに関する記述を、右側の対応するAAAサービスにドラッグ＆ドロップしなさい。",
+    "question": "左側のAAAサービスに関する記述を、右側の対応するAAAサービスにドラッグ＆ドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6772,7 +6703,7 @@ const allQuestions = [
   },
   {
     "id": "NO.577",
-    "question": "左側のAAA機能を、右側の対応するAAAセキュリティサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。",
+    "question": "左側のAAA機能を、右側の対応するAAAセキュリティサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6803,14 +6734,14 @@ const allQuestions = [
   },
   {
     "id": "NO.580",
-    "question": "左側のTCP/IPプロトコルを右側の伝送プロトコルにドラッグ＆ドロップしてください。\n[補足説明] ドラッグ＆ドロップ形式の問題です。左列のTCP/IPプロトコルと右列の伝送プロトコルを対応させる必要があります。",
+    "question": "左側のTCP/IPプロトコルを右側の伝送プロトコルにドラッグ＆ドロップしてください。\n[補足説明] ドラッグ＆ドロップ形式の問題です。左列のTCP/IPプロトコルと右列の伝送プロトコルを対応させる必要があります。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.581",
-    "question": "展示画像を参照してください。左側のサブネットマスクを、右側の対応するサブネットにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（ネットワークトポロジ図など）の内容と、ドラッグ＆ドロップ形式の指示を確認してください。左列のサブネットマスクと右列のサブネットを対応させる必要があります。\n全てのサブネットマスクが使用されるわけではありません。",
+    "question": "展示画像を参照してください。左側のサブネットマスクを、右側の対応するサブネットにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（ネットワークトポロジ図など）の内容と、ドラッグ＆ドロップ形式の指示を確認してください。左列のサブネットマスクと右列のサブネットを対応させる必要があります。\n全てのサブネットマスクが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6829,7 +6760,7 @@ const allQuestions = [
   },
   {
     "id": "NO.583",
-    "question": "左側のDNSコマンドを、右側のその効果にドラッグアンドドロップしてください。",
+    "question": "左側のDNSコマンドを、右側のその効果にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6956,7 +6887,7 @@ const allQuestions = [
   },
   {
     "id": "NO.594",
-    "question": "左側のAAAサービスの説明を、右側の対応するサービスにドラッグ＆ドロップしてください。",
+    "question": "左側のAAAサービスの説明を、右側の対応するサービスにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -6986,7 +6917,7 @@ const allQuestions = [
   },
   {
     "id": "NO.597",
-    "question": "左側にあるDHCPの機能を右側のいずれかの位置にドラッグアンドドロップしなさい。すべての機能が使用されるわけではありません。",
+    "question": "左側にあるDHCPの機能を右側のいずれかの位置にドラッグアンドドロップしなさい。すべての機能が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7018,7 +6949,7 @@ const allQuestions = [
   },
   {
     "id": "NO.600",
-    "question": "左側のAnsible用語を右側にドラッグアンドドロップしてください。",
+    "question": "左側のAnsible用語を右側にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7273,7 +7204,7 @@ const allQuestions = [
   },
   {
     "id": "NO.622",
-    "question": "左側にあるIPv6アドレスの説明を、右側のIPv6アドレスタイプにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\n[補足説明] 左側のIPv6アドレスの説明と右側のIPv6アドレスタイプを示す展示画像（リスト形式など）を確認してください。",
+    "question": "左側にあるIPv6アドレスの説明を、右側のIPv6アドレスタイプにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\n[補足説明] 左側のIPv6アドレスの説明と右側のIPv6アドレスタイプを示す展示画像（リスト形式など）を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7414,14 +7345,14 @@ const allQuestions = [
   },
   {
     "id": "NO.634",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。\n[補足説明] 表示されているドラッグ＆ドロップの要素（左側の特性と右側のIPv6アドレスタイプ）を確認してください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。\n[補足説明] 表示されているドラッグ＆ドロップの要素（左側の特性と右側のIPv6アドレスタイプ）を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.635",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。\n[補足説明] 表示されているドラッグ＆ドロップの要素（左側の特性と右側のIPv6アドレスタイプ）を確認してください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。\n[補足説明] 表示されているドラッグ＆ドロップの要素（左側の特性と右側のIPv6アドレスタイプ）を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7488,14 +7419,14 @@ const allQuestions = [
   },
   {
     "id": "NO.641",
-    "question": "エンジニアが、ローカルユーザーデータベースが既に設定されているルータ上で、enableコマンドの暗号化されたパスワードを設定しています。[補足説明] 左側にある設定コマンドを右側の正しい順序にドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。",
+    "question": "エンジニアが、ローカルユーザーデータベースが既に設定されているルータ上で、enableコマンドの暗号化されたパスワードを設定しています。[補足説明] 左側にある設定コマンドを右側の正しい順序にドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.642",
-    "question": "左側のセキュリティプログラムの要素を、右側の対応する説明にドラッグ＆ドロップしてください。",
+    "question": "左側のセキュリティプログラムの要素を、右側の対応する説明にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7552,7 +7483,7 @@ const allQuestions = [
   },
   {
     "id": "NO.647",
-    "question": "左側のTCPおよびUDPの特性を、右側の対応するプロトコルにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\n[補足説明] 設問には、左側にTCPおよびUDPの特性リスト、右側に対応するプロトコルリストが示されたドラッグアンドドロップ形式の図が付属しています。",
+    "question": "左側のTCPおよびUDPの特性を、右側の対応するプロトコルにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\n[補足説明] 設問には、左側にTCPおよびUDPの特性リスト、右側に対応するプロトコルリストが示されたドラッグアンドドロップ形式の図が付属しています。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -7562,24 +7493,8 @@ const allQuestions = [
     "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nネットワーク管理者は、ネットワーク内のルーターをリモート管理するためにSSHアクセスを許可する必要があります。運用チームは10.20.1.0/25ネットワークに所属しています。このタスクを達成するコマンドはどれですか？",
     "options": [
       "A. access-list 2699 permit udp 10.20.1.0 0.0.0.255",
-      "B. no access-list 2699 deny tcp any 10.20.1.0 0.0.0.127 e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22_3",
-    "question": "",
-    "options": [
-      "C. access-list 2699 permit tcp any 10.20.1.0 0.0.0.255 e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22_4",
-    "question": "",
-    "options": [
+      "B. no access-list 2699 deny tcp any 10.20.1.0 0.0.0.127 eq 22",
+      "C. access-list 2699 permit tcp any 10.20.1.0 0.0.0.255 eq 22",
       "D. no access-list 2699 deny ip any 10.20.1.0 0.0.0.255"
     ],
     "answer": "D",
@@ -7807,7 +7722,7 @@ const allQuestions = [
   },
   {
     "id": "NO.667",
-    "question": "左側のAAA機能を右側の正しいAAAサービスにドラッグアンドドロップしてください。",
+    "question": "左側のAAA機能を右側の正しいAAAサービスにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8240,10 +8155,10 @@ const allQuestions = [
   },
   {
     "id": "NO.703",
-    "question": "[補足説明] 展示画像（ネットワークインターフェースの設定情報など）の内容を確認してください。\n左側のネットワークパラメータを右側の正しい値にドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（ネットワークインターフェースの設定情報など）の内容を確認してください。\n左側のネットワークパラメータを右側の正しい値にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:\nNICベンダーOUI -> 00:0C:22\nNIC MACアドレス -> 00:0C:22:83:79:A3\nデフォルトゲートウェイ -> 192.168.1.193\nホストIPアドレス -> 192.168.1.200\nサブネットマスク -> 255.255.255.192\n\"ip route\"と\"ip addr show eth1\"はLinuxコマンドです。\n+ \"ip route\": ルーティングテーブルを表示\n+ \"ip addr show eth1\": ネットワークインターフェース（eth1インターフェースのみ）に関する詳細情報（IPアドレス、MACアドレス情報など）を取得",
     "options": [],
     "answer": "",
-    "explanation": "NICベンダーOUI -> 00:0C:22\nNIC MACアドレス -> 00:0C:22:83:79:A3\nデフォルトゲートウェイ -> 192.168.1.193\nホストIPアドレス -> 192.168.1.200\nサブネットマスク -> 255.255.255.192\n\"ip route\"と\"ip addr show eth1\"はLinuxコマンドです。\n+ \"ip route\": ルーティングテーブルを表示\n+ \"ip addr show eth1\": ネットワークインターフェース（eth1インターフェースのみ）に関する詳細情報（IPアドレス、MACアドレス情報など）を取得"
+    "explanation": ""
   },
   {
     "id": "NO.704",
@@ -8320,7 +8235,7 @@ const allQuestions = [
   },
   {
     "id": "NO.710",
-    "question": "左側の特性を右側のケーブルタイプにドラッグアンドドロップしてください。\n[補足説明] 問題を完了するには、左側の特性リストと右側のケーブルタイプリストが示された展示画像（ドラッグアンドドロップの選択肢）を確認する必要があります。",
+    "question": "左側の特性を右側のケーブルタイプにドラッグアンドドロップしてください。\n[補足説明] 問題を完了するには、左側の特性リストと右側のケーブルタイプリストが示された展示画像（ドラッグアンドドロップの選択肢）を確認する必要があります。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8365,7 +8280,7 @@ const allQuestions = [
   },
   {
     "id": "NO.714",
-    "question": "左側のAAA機能を、右側の対応するAAAセキュリティサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。",
+    "question": "左側のAAA機能を、右側の対応するAAAセキュリティサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8396,10 +8311,10 @@ const allQuestions = [
   },
   {
     "id": "NO.717",
-    "question": "左の記述を、右の適切なコンフィグレーション管理テクノロジーにドラッグアンドドロップしてください。",
+    "question": "左の記述を、右の適切なコンフィグレーション管理テクノロジーにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:\nAnsibleの焦点は、合理化され高速であること、およびノードエージェントのインストールを不要とすることです。したがって、Ansibleはすべての機能をSSH経由で実行します。AnsibleはPython上に構築されており、これはPuppetとChefのRuby基盤とは対照的です。\nTCPポート10002はコマンドポートです。これはChef Push Jobsのコンフィグレーションファイルで設定できます。このポートにより、Chef Push JobsクライアントはChef Push Jobsサーバーと通信できます。\nPuppetはオープンソースのコンフィグレーション管理ソリューションであり、Rubyで構築されています。カスタムのドメイン固有言語（DSL）と埋め込みRuby（ERB）テンプレートを提供してカスタムのPuppet言語ファイルを作成し、宣言型パラダイムのプログラミングアプローチを提供します。\nPuppetのコードの一部はマニフェストと呼ばれ、.pp拡張子を持つファイルです。",
     "options": [],
     "answer": "",
-    "explanation": "Ansibleの焦点は、合理化され高速であること、およびノードエージェントのインストールを不要とすることです。したがって、Ansibleはすべての機能をSSH経由で実行します。AnsibleはPython上に構築されており、これはPuppetとChefのRuby基盤とは対照的です。\nTCPポート10002はコマンドポートです。これはChef Push Jobsのコンフィグレーションファイルで設定できます。このポートにより、Chef Push JobsクライアントはChef Push Jobsサーバーと通信できます。\nPuppetはオープンソースのコンフィグレーション管理ソリューションであり、Rubyで構築されています。カスタムのドメイン固有言語（DSL）と埋め込みRuby（ERB）テンプレートを提供してカスタムのPuppet言語ファイルを作成し、宣言型パラダイムのプログラミングアプローチを提供します。\nPuppetのコードの一部はマニフェストと呼ばれ、.pp拡張子を持つファイルです。"
+    "explanation": ""
   },
   {
     "id": "NO.718",
@@ -8683,7 +8598,7 @@ const allQuestions = [
   },
   {
     "id": "NO.741",
-    "question": "左側にあるIPv6アドレスを右側のタイプにドラッグアンドドロップしてください。",
+    "question": "左側にあるIPv6アドレスを右側のタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8799,7 +8714,7 @@ const allQuestions = [
   },
   {
     "id": "NO.751",
-    "question": "左から右へAnsibleの機能をドラッグアンドドロップしてください。すべての機能が使用されるわけではありません。",
+    "question": "左から右へAnsibleの機能をドラッグアンドドロップしてください。すべての機能が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8868,7 +8783,7 @@ const allQuestions = [
   },
   {
     "id": "NO.757",
-    "question": "トランスポート層プロトコルの特性を左側から右側の対応するプロトコルにドラッグアンドドロップしてください。",
+    "question": "トランスポート層プロトコルの特性を左側から右側の対応するプロトコルにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8900,7 +8815,7 @@ const allQuestions = [
   },
   {
     "id": "NO.760",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしなさい。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8967,7 +8882,7 @@ const allQuestions = [
   },
   {
     "id": "NO.766",
-    "question": "左側にあるIPv6アドレスの詳細を、右側の対応するタイプにドラッグ＆ドロップしてください。",
+    "question": "左側にあるIPv6アドレスの詳細を、右側の対応するタイプにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -8986,7 +8901,7 @@ const allQuestions = [
   },
   {
     "id": "NO.768",
-    "question": "標準的なDNSルックアップ操作のステップを左から右へ正しい順序にドラッグ＆ドロップしなさい。",
+    "question": "標準的なDNSルックアップ操作のステップを左から右へ正しい順序にドラッグ＆ドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9066,10 +8981,10 @@ const allQuestions = [
   },
   {
     "id": "NO.775",
-    "question": "2台のスイッチ間のすべての物理ケーブル配線は完了しています。指定されたVLANとインターフェースを使用して、スイッチ間のネットワーク接続を設定してください。\n1. 各タスクで必要に応じて、Computeという名前のVLAN 100とTelephonyという名前のVLAN 200を設定します。\n2. SW2のEthernet0/1を、既存のAvailableという名前のVLANを使用するように設定します。\n3. アクセスポートを使用してスイッチ間の接続を設定します。\n4. SW1のEthernet0/1を、データVLANと音声VLANを使用して設定します。\n5. SW2のEthernet0/1について、Cisco独自のネイバー探索プロトコルが指定されたインターフェースのみで無効になるように設定します。",
+    "question": "2台のスイッチ間のすべての物理ケーブル配線は完了しています。指定されたVLANとインターフェースを使用して、スイッチ間のネットワーク接続を設定してください。\n1. 各タスクで必要に応じて、Computeという名前のVLAN 100とTelephonyという名前のVLAN 200を設定します。\n2. SW2のEthernet0/1を、既存のAvailableという名前のVLANを使用するように設定します。\n3. アクセスポートを使用してスイッチ間の接続を設定します。\n4. SW1のEthernet0/1を、データVLANと音声VLANを使用して設定します。\n5. SW2のEthernet0/1について、Cisco独自のネイバー探索プロトコルが指定されたインターフェースのみで無効になるように設定します。\nAnswer:\n以下の解説を参照してください。\n*+>Explanation:\n回答のコンフィグレーションは以下の通りです。\non sw1\nenable\nconf t\nvlan 100\nname Compute\nvlan 200\nname Telephony\nint e0/1\nswitchport voice vlan 200\nswitchport access vlan 100\nint e0/0\nswitchport mode access\ndo wr\non sw2\nVlan 99\nName Available\nInt e0/1\nSwitchport access vlan 99\ndo wr",
     "options": [],
-    "answer": "以下の解説を参照してください。",
-    "explanation": "回答のコンフィグレーションは以下の通りです。\non sw1\nenable\nconf t\nvlan 100\nname Compute\nvlan 200\nname Telephony\nint e0/1\nswitchport voice vlan 200\nswitchport access vlan 100\nint e0/0\nswitchport mode access\ndo wr\non sw2\nVlan 99\nName Available\nInt e0/1\nSwitchport access vlan 99\ndo wr"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.776",
@@ -9097,7 +9012,7 @@ const allQuestions = [
   },
   {
     "id": "NO.778",
-    "question": "Drag and drop the SNMP components from the left onto the descriptions on the right.\n（左側のSNMPコンポーネントを右側の説明にドラッグアンドドロップしてください。）",
+    "question": "Drag and drop the SNMP components from the left onto the descriptions on the right.\n（左側のSNMPコンポーネントを右側の説明にドラッグアンドドロップしてください。）\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9152,7 +9067,7 @@ const allQuestions = [
   },
   {
     "id": "NO.783",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9234,42 +9149,11 @@ const allQuestions = [
     "id": "NO.790",
     "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。RTR-1に対するどの設定が、PC-1からのRTR-1の任意のインターフェースへのSSHアクセスを拒否し、その他のすべてのトラフィックを許可しますか？",
     "options": [
-      "A. access-list 100 deny tcp host 172.16.1.33 any e"
+      "A. access-list 100 deny tcp host 172.16.1.33 any eq 23access-list 100 permit ip any anyinterface GigabitEthernet0/0ip access-group 100 in",
+      "B. access-list 100 deny tcp host 172.16.1.33 any eq 22access-list 100 permit ip any anyinterface GigabitEthernet0/0ip access-group 100 in",
+      "C. access-list 100 deny tcp host 172.16.1.33 any eq 22access-list 100 permit ip any anyline vty 0 15access- class 100 in",
+      "D. access-list 100 deny tcp host 172.16.1.33 any eq 23access-list 100 permit ip any anyline vty 0 15access- class 100 in"
     ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q23_3",
-    "question": "access-list 100 permit ip any anyinterface GigabitEthernet0/0ip access-group 100 in",
-    "options": [
-      "B. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22_5",
-    "question": "access-list 100 permit ip any anyinterface GigabitEthernet0/0ip access-group 100 in",
-    "options": [
-      "C. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q22_6",
-    "question": "access-list 100 permit ip any anyline vty 0 15access- class 100 in",
-    "options": [
-      "D. access-list 100 deny tcp host 172.16.1.33 any e"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q23_4",
-    "question": "access-list 100 permit ip any anyline vty 0 15access- class 100 in",
-    "options": [],
     "answer": "C",
     "explanation": ""
   },
@@ -9287,7 +9171,7 @@ const allQuestions = [
   },
   {
     "id": "NO.792",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9368,14 +9252,14 @@ const allQuestions = [
   },
   {
     "id": "NO.799",
-    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグ＆ドロップしてください。",
+    "question": "左側のTCPまたはUDPの詳細を、右側の対応するプロトコルにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.800",
-    "question": "左側のIPv6アドレスタイプの特徴を右側にドラッグ＆ドロップしてください。",
+    "question": "左側のIPv6アドレスタイプの特徴を右側にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9697,21 +9581,21 @@ const allQuestions = [
   },
   {
     "id": "NO.827",
-    "question": "左側のAAA用語を右側の説明にドラッグ＆ドロップしてください。",
+    "question": "左側のAAA用語を右側の説明にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.828",
-    "question": "左側にある管理接続タイプを、右側の定義にドラッグアンドドロップしてください。",
+    "question": "左側にある管理接続タイプを、右側の定義にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.829",
-    "question": "左側にあるノースバウンドAPIの特徴を、右側の任意の場所にドラッグアンドドロップしてください。すべての特徴が使用されるわけではありません。",
+    "question": "左側にあるノースバウンドAPIの特徴を、右側の任意の場所にドラッグアンドドロップしてください。すべての特徴が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -9984,7 +9868,7 @@ const allQuestions = [
   },
   {
     "id": "NO.852",
-    "question": "左側の機能群を右側の正しいネットワークコンポーネントにドラッグ＆ドロップしてください。\n[補足説明] 左側と右側にそれぞれリスト化された機能およびネットワークコンポーネントが提示されているものと推測されます。",
+    "question": "左側の機能群を右側の正しいネットワークコンポーネントにドラッグ＆ドロップしてください。\n[補足説明] 左側と右側にそれぞれリスト化された機能およびネットワークコンポーネントが提示されているものと推測されます。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -10003,7 +9887,7 @@ const allQuestions = [
   },
   {
     "id": "NO.854",
-    "question": "左側のSNMPコンポーネントを右側の説明にドラッグ＆ドロップしてください。\n[補足説明] 左側と右側にそれぞれリスト化されたSNMPコンポーネントおよび説明が提示されているものと推測されます。",
+    "question": "左側のSNMPコンポーネントを右側の説明にドラッグ＆ドロップしてください。\n[補足説明] 左側と右側にそれぞれリスト化されたSNMPコンポーネントおよび説明が提示されているものと推測されます。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -10034,10 +9918,10 @@ const allQuestions = [
   },
   {
     "id": "NO.857",
-    "question": "左側のネットワークに関する記述を、右側の対応するネットワークタイプにドラッグアンドドロップしてください。すべての記述が使用されるわけではありません。",
+    "question": "左側のネットワークに関する記述を、右側の対応するネットワークタイプにドラッグアンドドロップしてください。すべての記述が使用されるわけではありません。\nAnswer:\n*+>Explanation:\nコントローラベースのネットワーキング：\n- このタイプは、複数のデバイスにわたって一貫した設定を展開します。\n- 設定を適用するためにサウスバウンドAPIが使用されます。\n従来のネットワーキング：\n- 分散型コントロールプレーンが必要です。\n- このタイプは分散型マネージメントプレーンを必要とします。\nSDNネットワークでは、コントロールプレーンはSDNコントローラに一元化されており、ネットワークデバイスには分散していません。\nノースバウンドAPIはエンドデバイスと直接やり取りしません。それらはSDNコントローラがアプリケーションプレーン上のアプリケーションとやり取りすることを可能にします。",
     "options": [],
     "answer": "",
-    "explanation": "コントローラベースのネットワーキング：\n- このタイプは、複数のデバイスにわたって一貫した設定を展開します。\n- 設定を適用するためにサウスバウンドAPIが使用されます。\n従来のネットワーキング：\n- 分散型コントロールプレーンが必要です。\n- このタイプは分散型マネージメントプレーンを必要とします。\nSDNネットワークでは、コントロールプレーンはSDNコントローラに一元化されており、ネットワークデバイスには分散していません。\nノースバウンドAPIはエンドデバイスと直接やり取りしません。それらはSDNコントローラがアプリケーションプレーン上のアプリケーションとやり取りすることを可能にします。"
+    "explanation": ""
   },
   {
     "id": "NO.858",
@@ -10115,7 +9999,7 @@ const allQuestions = [
   },
   {
     "id": "NO.864",
-    "question": "左側にあるネットワークに関する記述を、右側の対応するネットワークの種類にドラッグアンドドロップしてください。",
+    "question": "左側にあるネットワークに関する記述を、右側の対応するネットワークの種類にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -10355,24 +10239,8 @@ const allQuestions = [
     "id": "NO.884",
     "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nR1のEthernet0/0に、VLAN 20を許可し、IPアドレス10.20.20.1/24を持つサブインターフェースを追加するために必要なコマンドは何ですか？",
     "options": [
-      "A. R1(config)#interface ethernet0/0R1(config)#encapsulation dot1"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q20",
-    "question": "R1(config)#ip address 10.20.20.1 255.255.255.0",
-    "options": [
-      "B. R1(config)#interface ethernet0/0.20R1(config)#encapsulation dot1"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": "Q20_2",
-    "question": "R1(config)#ip address 10.20.20.1 255.255.255.0",
-    "options": [
+      "A. R1(config)#interface ethernet0/0R1(config)#encapsulation dot1q 20R1(config)#ip address 10.20.20.1 255.255.255.0",
+      "B. R1(config)#interface ethernet0/0.20R1(config)#encapsulation dot1q 20R1(config)#ip address 10.20.20.1 255.255.255.0",
       "C. R1(config)#interface ethernet0/0.20R1(config)#ip address 10.20.20.1 255.255.255.0",
       "D. R1(config)#interface ethernet0/0R1(config)#ip address 10.20.20.1 255.255.255.0"
     ],
@@ -10609,14 +10477,14 @@ const allQuestions = [
   },
   {
     "id": "NO.904",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.905",
-    "question": "ネットワークエンジニアがOSPFv2ネイバー隣接関係を設定しています。左側のパラメータを右側の必要なカテゴリにドラッグアンドドロップしてください。すべてのパラメータが使用されるわけではありません。",
+    "question": "ネットワークエンジニアがOSPFv2ネイバー隣接関係を設定しています。左側のパラメータを右側の必要なカテゴリにドラッグアンドドロップしてください。すべてのパラメータが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -10974,10 +10842,10 @@ const allQuestions = [
   },
   {
     "id": "NO.935",
-    "question": "2台のレイヤー2スイッチ間に物理的な接続が実装されており、それらの間のネットワーク接続を設定する必要があります。\n1. LACP EtherChannelを構成し、番号を44とします。SW1とSW2スイッチ間で、両側のEthernet0/0およびEthernet0/1インターフェースを使用して構成します。LACPモードは両端で一致する必要があります。\n2. EtherChannelをトランクリンクとして構成します。\n3. トランクリンクを802.1qタグで構成します。\n4. VLAN 'MONITORING' をEtherChannelのタグなしVLANとして構成します。\nガイドライン\nこれは、仮想デバイスでタスクを実行するラボ項目です。\n* このラボ項目のタスクを表示するには、[Tasks]タブを参照してください。\n* デバイスのコンソールにアクセスしてタスクを実行するには、[Topology]タブを参照してください。\n* 必要なすべてのデバイスへのコンソールアクセスは、デバイスアイコンをクリックするか、コンソールウィンドウの上にあるタブを使用することで利用できます。\n* 必要なすべての事前設定は適用済みです。\n* いずれのデバイスでもenableパスワードまたはホスト名を変更しないでください。\n* 次の項目に進む前に、設定をNVRAMに保存してください。\n* このラボを提出して次の問題に進むには、画面下部の[Next]をクリックしてください。\n* [Next]がクリックされると、ラボは閉じられ、再開することはできません。",
+    "question": "2台のレイヤー2スイッチ間に物理的な接続が実装されており、それらの間のネットワーク接続を設定する必要があります。\n1. LACP EtherChannelを構成し、番号を44とします。SW1とSW2スイッチ間で、両側のEthernet0/0およびEthernet0/1インターフェースを使用して構成します。LACPモードは両端で一致する必要があります。\n2. EtherChannelをトランクリンクとして構成します。\n3. トランクリンクを802.1qタグで構成します。\n4. VLAN 'MONITORING' をEtherChannelのタグなしVLANとして構成します。\nガイドライン\nこれは、仮想デバイスでタスクを実行するラボ項目です。\n* このラボ項目のタスクを表示するには、[Tasks]タブを参照してください。\n* デバイスのコンソールにアクセスしてタスクを実行するには、[Topology]タブを参照してください。\n* 必要なすべてのデバイスへのコンソールアクセスは、デバイスアイコンをクリックするか、コンソールウィンドウの上にあるタブを使用することで利用できます。\n* 必要なすべての事前設定は適用済みです。\n* いずれのデバイスでもenableパスワードまたはホスト名を変更しないでください。\n* 次の項目に進む前に、設定をNVRAMに保存してください。\n* このラボを提出して次の問題に進むには、画面下部の[Next]をクリックしてください。\n* [Next]がクリックされると、ラボは閉じられ、再開することはできません。\nAnswer:\n解決策は以下の説明に示されています。\n*+>Explanation:\nLACP EtherChannelを構成し、番号を44とし、SW1とSW2スイッチ間で、両側のEthernet0/0およびEthernet0/1インターフェースを使用して構成し、EtherChannelをトランクリンクとして構成し、トランクリンクを802.1qタグで構成し、VLAN 'MONITORING' をEtherChannelのタグなしVLANとして構成するには、以下の手順に従う必要があります。\nSW1とSW2の両方で、configure terminalコマンドを使用してグローバルコンフィグレーションモードに入ります。\nSW1とSW2の両方で、interface range ethernet 0/0 - 1コマンドを使用してEtherChannelを形成する2つのインターフェースを選択します。これにより、インターフェースレンジコンフィグレーションモードに入ります。\nSW1とSW2の両方で、channel-protocol lacpコマンドを使用してプロトコルをLACPに設定します。\nSW1とSW2の両方で、channel-group 44 mode activeコマンドを使用してインターフェースをEtherChannelグループ番号44に割り当てます。これにより、Port-channel44という論理インターフェースが作成され、両端でLACPモードがアクティブに設定されます。EtherChannelを形成するには、LACPモードが両端で一致している必要があります。\nSW1とSW2の両方で、exitコマンドを使用してインターフェースレンジコンフィグレーションモードを終了します。\nSW1とSW2の両方で、interface port-channel 44コマンドを使用してPort-channelインターフェースコンフィグレーションモードに入ります。\nSW1とSW2の両方で、switchport mode trunkコマンドを使用してPort-channelインターフェースをトランクリンクとして構成します。\nSW1とSW2の両方で、switchport trunk encapsulation dot1qコマンドを使用して、Port-channelインターフェースがVLAN識別用に802.1qタグを使用するように構成します。\nSW1とSW2の両方で、switchport trunk native vlan MONITORINGコマンドを使用して、VLAN 'MONITORING' をPort-channelインターフェースのタグなしVLANとして構成します。\nSW1とSW2の両方で、exitコマンドを使用してPort-channelインターフェースコンフィグレーションモードを終了します。\nSW1とSW2の両方で、copy running-config startup-configコマンドを使用して設定をNVRAMに保存します。",
     "options": [],
-    "answer": "解決策は以下の説明に示されています。",
-    "explanation": "LACP EtherChannelを構成し、番号を44とし、SW1とSW2スイッチ間で、両側のEthernet0/0およびEthernet0/1インターフェースを使用して構成し、EtherChannelをトランクリンクとして構成し、トランクリンクを802.1qタグで構成し、VLAN 'MONITORING' をEtherChannelのタグなしVLANとして構成するには、以下の手順に従う必要があります。\nSW1とSW2の両方で、configure terminalコマンドを使用してグローバルコンフィグレーションモードに入ります。\nSW1とSW2の両方で、interface range ethernet 0/0 - 1コマンドを使用してEtherChannelを形成する2つのインターフェースを選択します。これにより、インターフェースレンジコンフィグレーションモードに入ります。\nSW1とSW2の両方で、channel-protocol lacpコマンドを使用してプロトコルをLACPに設定します。\nSW1とSW2の両方で、channel-group 44 mode activeコマンドを使用してインターフェースをEtherChannelグループ番号44に割り当てます。これにより、Port-channel44という論理インターフェースが作成され、両端でLACPモードがアクティブに設定されます。EtherChannelを形成するには、LACPモードが両端で一致している必要があります。\nSW1とSW2の両方で、exitコマンドを使用してインターフェースレンジコンフィグレーションモードを終了します。\nSW1とSW2の両方で、interface port-channel 44コマンドを使用してPort-channelインターフェースコンフィグレーションモードに入ります。\nSW1とSW2の両方で、switchport mode trunkコマンドを使用してPort-channelインターフェースをトランクリンクとして構成します。\nSW1とSW2の両方で、switchport trunk encapsulation dot1qコマンドを使用して、Port-channelインターフェースがVLAN識別用に802.1qタグを使用するように構成します。\nSW1とSW2の両方で、switchport trunk native vlan MONITORINGコマンドを使用して、VLAN 'MONITORING' をPort-channelインターフェースのタグなしVLANとして構成します。\nSW1とSW2の両方で、exitコマンドを使用してPort-channelインターフェースコンフィグレーションモードを終了します。\nSW1とSW2の両方で、copy running-config startup-configコマンドを使用して設定をNVRAMに保存します。"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.936",
@@ -11381,10 +11249,10 @@ const allQuestions = [
   },
   {
     "id": "NO.969",
-    "question": "物理的な接続は2台のレイヤ2スイッチ間に実装されており、それらの間のネットワーク接続を構成する必要があります。\n1. LACP EtherChannelを1として構成します。両側のインターフェースEthernet0/0とEthernet0/1を使用して、スイッチSW1とSW2間で構成します。LACPモードは両端で一致する必要があります。\n2. EtherChannelをトランクリンクとして構成します。\n3. トランクリンクを802.1Qタグで構成します。\n4. EtherChannelのネイティブVLANをVLAN 15として構成します。",
+    "question": "物理的な接続は2台のレイヤ2スイッチ間に実装されており、それらの間のネットワーク接続を構成する必要があります。\n1. LACP EtherChannelを1として構成します。両側のインターフェースEthernet0/0とEthernet0/1を使用して、スイッチSW1とSW2間で構成します。LACPモードは両端で一致する必要があります。\n2. EtherChannelをトランクリンクとして構成します。\n3. トランクリンクを802.1Qタグで構成します。\n4. EtherChannelのネイティブVLANをVLAN 15として構成します。\nAnswer:\nSee the Explanation below.\n*+>Explanation:\n以下の構成で回答します。\nSW1にて:\nconf terminal\nvlan 15\nexit\ninterface range eth0/0 - 1\nchannel-group 1 mode active\nexit\ninterface port-channel 1\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\nswitchport trunk native vlan 15\nend\ncopy run start\nSW2にて:\nconf terminal\nvlan 15\nexit\ninterface range eth0/0 - 1\nchannel-group 1 mode active\nexit\ninterface port-channel 1\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\nswitchport trunk native vlan 15\nend\ncopy run start",
     "options": [],
-    "answer": "See the Explanation below.",
-    "explanation": "以下の構成で回答します。\nSW1にて:\nconf terminal\nvlan 15\nexit\ninterface range eth0/0 - 1\nchannel-group 1 mode active\nexit\ninterface port-channel 1\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\nswitchport trunk native vlan 15\nend\ncopy run start\nSW2にて:\nconf terminal\nvlan 15\nexit\ninterface range eth0/0 - 1\nchannel-group 1 mode active\nexit\ninterface port-channel 1\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\nswitchport trunk native vlan 15\nend\ncopy run start"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.970",
@@ -11678,10 +11546,10 @@ const allQuestions = [
   },
   {
     "id": "NO.994",
-    "question": "左側のIPv6 DNSレコードタイプを右側の説明にドラッグしてください。",
+    "question": "左側のIPv6 DNSレコードタイプを右側の説明にドラッグしてください。\nAnswer:\n*+>Explanation:\nhttps://ns1.com/resources/dns-types-records-servers-andqueries#:~:text=Address%20Mapping%20record%20\n(A%20Record,a%20hostname%20to%20another%20hostname.",
     "options": [],
     "answer": "",
-    "explanation": "https://ns1.com/resources/dns-types-records-servers-andqueries#:~:text=Address%20Mapping%20record%20\n(A%20Record,a%20hostname%20to%20another%20hostname."
+    "explanation": ""
   },
   {
     "id": "NO.995",
@@ -11721,7 +11589,7 @@ const allQuestions = [
   },
   {
     "id": "NO.998",
-    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。",
+    "question": "左側の特性を右側のIPv6アドレスタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -12103,10 +11971,10 @@ const allQuestions = [
   },
   {
     "id": "NO.1030",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。エンジニアは、ホストAがホストBと通信できるように、2つのネットワーク間にスタティックネットワークルートを設定する必要があります。\n左側のコマンドを、それらが設定されるべき右側のルーターにドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。エンジニアは、ホストAがホストBと通信できるように、2つのネットワーク間にスタティックネットワークルートを設定する必要があります。\n左側のコマンドを、それらが設定されるべき右側のルーターにドラッグアンドドロップしてください。すべてのコマンドが使用されるわけではありません。\nAnswer:\n3 - R1\n2 &4 - R2\n5 - R3\n*+>Explanation:\n3 - R1\n2 &4 - R2\n5 - R3",
     "options": [],
-    "answer": "3 - R1\n2 &4 - R2\n5 - R3",
-    "explanation": "3 - R1\n2 &4 - R2\n5 - R3"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.1031",
@@ -12171,7 +12039,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1036",
-    "question": "左側の802.11無線規格を、右側の一致する記述にドラッグ＆ドロップしてください。",
+    "question": "左側の802.11無線規格を、右側の一致する記述にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -12263,10 +12131,10 @@ const allQuestions = [
   },
   {
     "id": "NO.1044",
-    "question": "左側にあるTCPとUDPの特性を、右側の対応するプロトコルにドラッグアンドドロップしてください。",
+    "question": "左側にあるTCPとUDPの特性を、右側の対応するプロトコルにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:\nTCP: データを特定の順序で送信する、確立されたコネクションを必要とする、ウェブブラウジングをサポートする\nUDP: ライブストリーミングに適している、再送がサポートされていない、パケットロスを許容する",
     "options": [],
     "answer": "",
-    "explanation": "TCP: データを特定の順序で送信する、確立されたコネクションを必要とする、ウェブブラウジングをサポートする\nUDP: ライブストリーミングに適している、再送がサポートされていない、パケットロスを許容する"
+    "explanation": ""
   },
   {
     "id": "NO.1045",
@@ -12318,10 +12186,10 @@ const allQuestions = [
   },
   {
     "id": "NO.1049",
-    "question": "左側のAAAサービスに関する記述を、右側の対応するAAAサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。",
+    "question": "左側のAAAサービスに関する記述を、右側の対応するAAAサービスにドラッグアンドドロップしてください。すべてのオプションが使用されるわけではありません。\nAnswer:\n*+>Explanation:\n1&6 認証 (authentication)\n2&4 認可 (authorization)",
     "options": [],
     "answer": "",
-    "explanation": "1&6 認証 (authentication)\n2&4 認可 (authorization)"
+    "explanation": ""
   },
   {
     "id": "NO.1050",
@@ -12373,7 +12241,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1054",
-    "question": "左側にある軽量アクセスポイントの動作モードを、右側の説明にドラッグアンドドロップしなさい。",
+    "question": "左側にある軽量アクセスポイントの動作モードを、右側の説明にドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -12440,7 +12308,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1060",
-    "question": "IPv4ネットワークサブネットを左から右の正しい使用可能なホスト範囲にドラッグアンドドロップしてください。",
+    "question": "IPv4ネットワークサブネットを左から右の正しい使用可能なホスト範囲にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -12667,7 +12535,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1079",
-    "question": "[補足説明] 展示画像（学習したプレフィックスとルートメソッドの対応図など）の内容を確認してください。\n左側の学習済みプレフィックスを、右側のそれらが学習された優先ルートメソッドにドラッグアンドドロップしなさい。",
+    "question": "[補足説明] 展示画像（学習したプレフィックスとルートメソッドの対応図など）の内容を確認してください。\n左側の学習済みプレフィックスを、右側のそれらが学習された優先ルートメソッドにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -12758,7 +12626,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1087",
-    "question": "左側のデバイス管理技術の特性を、右側の対応する展開タイプへドラッグ＆ドロップしてください。\n[補足説明] デバイス管理技術の特性と展開タイプを対応付けるドラッグ＆ドロップ形式の問題です。元の画像データを確認してください。",
+    "question": "左側のデバイス管理技術の特性を、右側の対応する展開タイプへドラッグ＆ドロップしてください。\n[補足説明] デバイス管理技術の特性と展開タイプを対応付けるドラッグ＆ドロップ形式の問題です。元の画像データを確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13031,14 +12899,14 @@ const allQuestions = [
   },
   {
     "id": "NO.1110",
-    "question": "左側のネットワーキングに関する記述を、右側の対応するネットワーキングタイプにドラッグ＆ドロップしてください。すべての記述が使用されるわけではありません。",
+    "question": "左側のネットワーキングに関する記述を、右側の対応するネットワーキングタイプにドラッグ＆ドロップしてください。すべての記述が使用されるわけではありません。\nAnswer:\n*+>Explanation:\n2, 4\n1, 3",
     "options": [],
     "answer": "",
-    "explanation": "2, 4\n1, 3"
+    "explanation": ""
   },
   {
     "id": "NO.1111",
-    "question": "左側のCisco Wireless LAN Controllerのセキュリティ設定を、右側の正しいセキュリティメカニズムカテゴリにドラッグ＆ドロップしてください。",
+    "question": "左側のCisco Wireless LAN Controllerのセキュリティ設定を、右側の正しいセキュリティメカニズムカテゴリにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13057,7 +12925,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1113",
-    "question": "デバイス管理技術の各特性を左側から右側の展開タイプにドラッグ＆ドロップしてください。\n[補足説明] 左側に示されたデバイス管理技術の特性リストと、右側に示された展開タイプリストを確認してください。",
+    "question": "デバイス管理技術の各特性を左側から右側の展開タイプにドラッグ＆ドロップしてください。\n[補足説明] 左側に示されたデバイス管理技術の特性リストと、右側に示された展開タイプリストを確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13161,7 +13029,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1122",
-    "question": "アクセスポイントモードに関する左側の記述を、右側の対応するモードにドラッグアンドドロップしなさい。",
+    "question": "アクセスポイントモードに関する左側の記述を、右側の対応するモードにドラッグアンドドロップしなさい。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13241,7 +13109,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1129",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\n左側の宛先IPを、それらの宛先に到達するための右側のパスにドラッグアンドドロップしてください。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\n左側の宛先IPを、それらの宛先に到達するための右側のパスにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13357,7 +13225,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1139",
-    "question": "左側にあるSNMPマネージャーおよびエージェントの識別コマンドを、右側の機能にドラッグアンドドロップしてください。",
+    "question": "左側にあるSNMPマネージャーおよびエージェントの識別コマンドを、右側の機能にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13376,7 +13244,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1141",
-    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nあるエンジニアは、ユーザーの無線LAN接続性について、/24サブネットのネットワークパラメータが有効であることを確認する必要があります。左側の値を右側のネットワークパラメータにドラッグアンドドロップしてください。\nすべての値が使用されるわけではありません。",
+    "question": "[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\nあるエンジニアは、ユーザーの無線LAN接続性について、/24サブネットのネットワークパラメータが有効であることを確認する必要があります。左側の値を右側のネットワークパラメータにドラッグアンドドロップしてください。\nすべての値が使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13493,10 +13361,10 @@ const allQuestions = [
   },
   {
     "id": "NO.1151",
-    "question": "左側の脅威軽減技術を、右側の軽減する脅威または攻撃のタイプにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（脅威軽減技術と脅威の対応付け）の内容を確認してください。",
+    "question": "左側の脅威軽減技術を、右側の軽減する脅威または攻撃のタイプにドラッグ＆ドロップしてください。\n[補足説明] 展示画像（脅威軽減技術と脅威の対応付け）の内容を確認してください。\nAnswer:\n*+>Explanation:\nダブルタギング攻撃：\nこの攻撃では、攻撃側のコンピュータは2つの802.1Qタグを持つフレームを生成します。最初のタグはトランクポートのネイティブVLAN（この場合はVLAN 10）と一致し、2番目のタグは攻撃したいホストのVLAN（VLAN 20）と一致します。\n攻撃者からのパケットがSwitch Aに到達すると、Switch Aは最初のVLAN 10のみを認識し、自身のネイティブVLAN 10と一致するため、このVLANタグは削除されます。Switch Aは、同じネイティブVLAN 10を持つすべてのリンクにフレームを転送します。Switch BはVLAN 20のタグが付いたフレームを受信するため、このタグを削除し、被害者コンピュータに転送します。\n注：この攻撃は、トランク（2つのスイッチ間）が攻撃者と同じネイティブVLANを持っている場合にのみ機能します。\nこの種の攻撃を軽減するには、VLANアクセス制御リスト（VACLs、VLAN内のすべてのトラフィックに適用されます。VACLを使用して、特定の被害者/サーバーへの攻撃者トラフィックをドロップできます）を使用するか、プライベートVLANを実装できます。\n\nARP攻撃（ARPポイズニング/スプーフィングなど）は、悪意のあるアクターがローカルエリアネットワーク上で偽造されたARPメッセージを送信するタイプの攻撃です。ARPは、ARPリクエストが受信されなかった場合でも、ホストからの gratuitous reply を許可するためです。これにより、攻撃者のMACアドレスが、ネットワーク上の正当なコンピュータまたはサーバーのIPアドレスとリンクされます。これはレイヤー2で行われるARPに基づいた攻撃です。\nダイナミックARPインスペクション（DAI）は、ネットワーク内のARPパケットを検証するセキュリティ機能であり、この種の攻撃を軽減するために使用できます。",
     "options": [],
     "answer": "",
-    "explanation": "ダブルタギング攻撃：\nこの攻撃では、攻撃側のコンピュータは2つの802.1Qタグを持つフレームを生成します。最初のタグはトランクポートのネイティブVLAN（この場合はVLAN 10）と一致し、2番目のタグは攻撃したいホストのVLAN（VLAN 20）と一致します。\n攻撃者からのパケットがSwitch Aに到達すると、Switch Aは最初のVLAN 10のみを認識し、自身のネイティブVLAN 10と一致するため、このVLANタグは削除されます。Switch Aは、同じネイティブVLAN 10を持つすべてのリンクにフレームを転送します。Switch BはVLAN 20のタグが付いたフレームを受信するため、このタグを削除し、被害者コンピュータに転送します。\n注：この攻撃は、トランク（2つのスイッチ間）が攻撃者と同じネイティブVLANを持っている場合にのみ機能します。\nこの種の攻撃を軽減するには、VLANアクセス制御リスト（VACLs、VLAN内のすべてのトラフィックに適用されます。VACLを使用して、特定の被害者/サーバーへの攻撃者トラフィックをドロップできます）を使用するか、プライベートVLANを実装できます。\n\nARP攻撃（ARPポイズニング/スプーフィングなど）は、悪意のあるアクターがローカルエリアネットワーク上で偽造されたARPメッセージを送信するタイプの攻撃です。ARPは、ARPリクエストが受信されなかった場合でも、ホストからの gratuitous reply を許可するためです。これにより、攻撃者のMACアドレスが、ネットワーク上の正当なコンピュータまたはサーバーのIPアドレスとリンクされます。これはレイヤー2で行われるARPに基づいた攻撃です。\nダイナミックARPインスペクション（DAI）は、ネットワーク内のARPパケットを検証するセキュリティ機能であり、この種の攻撃を軽減するために使用できます。"
+    "explanation": ""
   },
   {
     "id": "NO.1152",
@@ -13669,7 +13537,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1166",
-    "question": "左側のデバイス管理の説明を、右側のデバイス管理タイプにドラッグしてください。",
+    "question": "左側のデバイス管理の説明を、右側のデバイス管理タイプにドラッグしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13688,7 +13556,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1168",
-    "question": "IPプロトコル送信の説明を左から右のIPトラフィックタイプにドラッグしてください。",
+    "question": "IPプロトコル送信の説明を左から右のIPトラフィックタイプにドラッグしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13914,7 +13782,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1187",
-    "question": "左側のネットワーキングの特性を、右側の正しいネットワークタイプにドラッグアンドドロップしてください。",
+    "question": "左側のネットワーキングの特性を、右側の正しいネットワークタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -13993,7 +13861,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1194",
-    "question": "エンジニアが、ローカルユーザーデータベースが既に設定されているルーターで、enableコマンド用の暗号化パスワードを設定しています。左側にある設定コマンドを右側の正しい順序にドラッグ＆ドロップしてください。すべてのコマンドが使用されるわけではありません。\n[補足説明] 左側（利用可能なコマンドリスト）と右側（配置するエリア）を示す画像（GUIインターフェースなど）の内容を確認してください。",
+    "question": "エンジニアが、ローカルユーザーデータベースが既に設定されているルーターで、enableコマンド用の暗号化パスワードを設定しています。左側にある設定コマンドを右側の正しい順序にドラッグ＆ドロップしてください。すべてのコマンドが使用されるわけではありません。\n[補足説明] 左側（利用可能なコマンドリスト）と右側（配置するエリア）を示す画像（GUIインターフェースなど）の内容を確認してください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -14143,7 +14011,7 @@ const allQuestions = [
   },
   {
     "id": "NO.1207",
-    "question": "左側の仮想化コンセプトを、右側の一致する記述にドラッグアンドドロップしてください。",
+    "question": "左側の仮想化コンセプトを、右側の一致する記述にドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -14259,10 +14127,10 @@ const allQuestions = [
   },
   {
     "id": "NO.1217",
-    "question": "左側の説明を右側の構成管理テクノロジーにドラッグ＆ドロップしてください。",
+    "question": "左側の説明を右側の構成管理テクノロジーにドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:\nAnsible:\n- リモートデバイス通信にSSHを使用する\n- 基本的な構成要素にYAMLを使用する\nChef:\n- 構成プッシュジョブにTCPポート10002を使用する\n- 基本的な構成要素にRubyを使用する\nPuppet:\n- 基本的な構成要素はマニフェストに保存される\n- 通信にTCP 8140を使用する\nAnsibleの焦点は、合理化され高速であること、そしてノードエージェントのインストールを必要としないことです。そのため、Ansibleはすべての機能をSSH経由で実行します。AnsibleはPythonで構築されており、PuppetとChefのRubyを基盤としているのとは対照的です。\nTCPポート10002はコマンドポートです。これはChef Push Jobs構成ファイルで設定できます。このポートにより、Chef Push JobsクライアントはChef Push Jobsサーバーと通信できます。\nPuppetはオープンソースの構成管理ソリューションであり、Rubyで構築されており、カスタムのPuppet言語ファイルを作成するために、カスタムのドメイン固有言語（DSL）および組み込みRuby（ERB）テンプレートを提供し、宣言型パラダイムプログラミングアプローチを提供します。\nPuppetのコードの一部はマニフェストと呼ばれ、.pp拡張子を持つファイルです。",
     "options": [],
     "answer": "",
-    "explanation": "Ansible:\n- リモートデバイス通信にSSHを使用する\n- 基本的な構成要素にYAMLを使用する\nChef:\n- 構成プッシュジョブにTCPポート10002を使用する\n- 基本的な構成要素にRubyを使用する\nPuppet:\n- 基本的な構成要素はマニフェストに保存される\n- 通信にTCP 8140を使用する\nAnsibleの焦点は、合理化され高速であること、そしてノードエージェントのインストールを必要としないことです。そのため、Ansibleはすべての機能をSSH経由で実行します。AnsibleはPythonで構築されており、PuppetとChefのRubyを基盤としているのとは対照的です。\nTCPポート10002はコマンドポートです。これはChef Push Jobs構成ファイルで設定できます。このポートにより、Chef Push JobsクライアントはChef Push Jobsサーバーと通信できます。\nPuppetはオープンソースの構成管理ソリューションであり、Rubyで構築されており、カスタムのPuppet言語ファイルを作成するために、カスタムのドメイン固有言語（DSL）および組み込みRuby（ERB）テンプレートを提供し、宣言型パラダイムプログラミングアプローチを提供します。\nPuppetのコードの一部はマニフェストと呼ばれ、.pp拡張子を持つファイルです。"
+    "explanation": ""
   },
   {
     "id": "NO.1218",
@@ -14314,14 +14182,14 @@ const allQuestions = [
   },
   {
     "id": "NO.1222",
-    "question": "すべての物理ケーブルが配線されています。ルーターR4とPC1は完全に設定されており、到達不能です。R4のWANインターフェースは、各サブネットの最終オクテットで.4を使用します。\n設定は、エンドツーエンドの接続性を確立することを保証する必要があります。\n1. R1がR4のLAN上にあるPC1にのみ到達するために、R2を経由するパスを優先するようスタティックルーティングを設定します。\n2. プライマリパスに障害が発生した場合に、R1を送信元とするトラフィックがR3を経由してPC1へ代替パスを取るようスタティックルーティングを設定します。\n3. R1とR3に、最小ホップ数でインターネットへのデフォルトルートを設定します。\nガイドライン\nこれは、仮想デバイス上でタスクが実行されるラボアイテムです。\n* このラボアイテムのタスクを表示するには、「Tasks」タブを参照してください。\n* デバイスコンソールにアクセスし、タスクを実行するには、「Topology」タブを参照してください。[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\n* 必要な事前設定はすべて適用されています。\n* いかなるデバイスのenableパスワードやホスト名も変更しないでください。\n* 次のアイテムに進む前に、設定をNVRAMに保存してください。\n* 画面下部の「Next」をクリックしてこのラボを提出し、次の問題に進んでください。\n* 「Next」をクリックすると、ラボは閉じられ、再度開くことはできません。",
+    "question": "すべての物理ケーブルが配線されています。ルーターR4とPC1は完全に設定されており、到達不能です。R4のWANインターフェースは、各サブネットの最終オクテットで.4を使用します。\n設定は、エンドツーエンドの接続性を確立することを保証する必要があります。\n1. R1がR4のLAN上にあるPC1にのみ到達するために、R2を経由するパスを優先するようスタティックルーティングを設定します。\n2. プライマリパスに障害が発生した場合に、R1を送信元とするトラフィックがR3を経由してPC1へ代替パスを取るようスタティックルーティングを設定します。\n3. R1とR3に、最小ホップ数でインターネットへのデフォルトルートを設定します。\nガイドライン\nこれは、仮想デバイス上でタスクが実行されるラボアイテムです。\n* このラボアイテムのタスクを表示するには、「Tasks」タブを参照してください。\n* デバイスコンソールにアクセスし、タスクを実行するには、「Topology」タブを参照してください。[補足説明] 展示画像（ネットワークトポロジ図など）の内容を確認してください。\n* 必要な事前設定はすべて適用されています。\n* いかなるデバイスのenableパスワードやホスト名も変更しないでください。\n* 次のアイテムに進む前に、設定をNVRAMに保存してください。\n* 画面下部の「Next」をクリックしてこのラボを提出し、次の問題に進んでください。\n* 「Next」をクリックすると、ラボは閉じられ、再度開くことはできません。\nAnswer:\n解答は以下の解説を参照してください。\n*+>Explanation:\nR1にスタティックルーティングを設定して、R4のLAN上のPC1にのみ到達するためにR2を経由するパスを優先させるには、ホスト10.0.0.100/8に対して、R1に接続されたR2のインターフェースのIPアドレスである20.0.0.2をネクストホップアドレスとするスタティックルートを作成する必要があります。また、このルートに、スタティックルートのデフォルトADである1よりも低い管理距離（AD）を割り当てることで、他の可能なルートよりも優先度を高くする必要があります。例えば、このルートにはADを10に設定できます。このスタティックルートを作成するには、R1のコンソールで以下のコマンドを入力する必要があります。\nR1#configure terminal\nR1(config)#ip route 10.0.0.100 255.0.0.0 20.0.0.2 10\nR1(config)#end\nプライマリパスに障害が発生した場合に、R1を送信元とするトラフィックがR3を経由してPC1へ代替パスを取るようにR1にスタティックルーティングを設定するには、ホスト10.0.0.100/8に対して、R1に接続されたR3のインターフェースのIPアドレスである40.0.0.2をネクストホップアドレスとする別のスタティックルートを作成する必要があります。また、このルートには、プライマリパスのADよりも高いADを割り当てることで、優先度を低くし、バックアップルートとして機能させる必要があります。例えば、このルートにはADを20に設定できます。このタイプのスタティックルートはフローティングスタティックルートとしても知られています。このスタティックルートを作成するには、R1のコンソールで以下のコマンドを入力する必要があります。\nR1#configure terminal\nR1(config)#ip route 10.0.0.100 255.0.0.0 40.0.0.2 20\nR1(config)#end\nR1とR3に、最小ホップ数でインターネットへのデフォルトルートを設定するには、ネットワーク0.0.0.0/0に対して、それぞれのルーターに接続されたISPのインターフェースをネクストホップアドレスとするスタティックルートを作成する必要があります。デフォルトルートは、任意の宛先アドレスに一致し、他の特定のルートが利用できない場合に使用される特殊なタイプのスタティックルートです。R1に接続されたISPのインターフェースのIPアドレスは10.0.0.4であり、R3に接続されたISPのインターフェースのIPアドレスは50.0.0.4です。これらのデフォルトルートを作成するには、各ルーターのコンソールで以下のコマンドを入力する必要があります。\nR1にて:\nR1#configure terminal\nR1(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.4\nR1(config)#end\nR3にて:\nR3#configure terminal\nR3(config)#ip route 0.0.0.0 0.0.0.0 50.0.0.4\nR3(config)#end",
     "options": [],
-    "answer": "解答は以下の解説を参照してください。",
-    "explanation": "R1にスタティックルーティングを設定して、R4のLAN上のPC1にのみ到達するためにR2を経由するパスを優先させるには、ホスト10.0.0.100/8に対して、R1に接続されたR2のインターフェースのIPアドレスである20.0.0.2をネクストホップアドレスとするスタティックルートを作成する必要があります。また、このルートに、スタティックルートのデフォルトADである1よりも低い管理距離（AD）を割り当てることで、他の可能なルートよりも優先度を高くする必要があります。例えば、このルートにはADを10に設定できます。このスタティックルートを作成するには、R1のコンソールで以下のコマンドを入力する必要があります。\nR1#configure terminal\nR1(config)#ip route 10.0.0.100 255.0.0.0 20.0.0.2 10\nR1(config)#end\nプライマリパスに障害が発生した場合に、R1を送信元とするトラフィックがR3を経由してPC1へ代替パスを取るようにR1にスタティックルーティングを設定するには、ホスト10.0.0.100/8に対して、R1に接続されたR3のインターフェースのIPアドレスである40.0.0.2をネクストホップアドレスとする別のスタティックルートを作成する必要があります。また、このルートには、プライマリパスのADよりも高いADを割り当てることで、優先度を低くし、バックアップルートとして機能させる必要があります。例えば、このルートにはADを20に設定できます。このタイプのスタティックルートはフローティングスタティックルートとしても知られています。このスタティックルートを作成するには、R1のコンソールで以下のコマンドを入力する必要があります。\nR1#configure terminal\nR1(config)#ip route 10.0.0.100 255.0.0.0 40.0.0.2 20\nR1(config)#end\nR1とR3に、最小ホップ数でインターネットへのデフォルトルートを設定するには、ネットワーク0.0.0.0/0に対して、それぞれのルーターに接続されたISPのインターフェースをネクストホップアドレスとするスタティックルートを作成する必要があります。デフォルトルートは、任意の宛先アドレスに一致し、他の特定のルートが利用できない場合に使用される特殊なタイプのスタティックルートです。R1に接続されたISPのインターフェースのIPアドレスは10.0.0.4であり、R3に接続されたISPのインターフェースのIPアドレスは50.0.0.4です。これらのデフォルトルートを作成するには、各ルーターのコンソールで以下のコマンドを入力する必要があります。\nR1にて:\nR1#configure terminal\nR1(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.4\nR1(config)#end\nR3にて:\nR3#configure terminal\nR3(config)#ip route 0.0.0.0 0.0.0.0 50.0.0.4\nR3(config)#end"
+    "answer": "",
+    "explanation": ""
   },
   {
     "id": "NO.1223",
-    "question": "左側のワイヤレスアーキテクチャの利点を、右側のアーキテクチャタイプにドラッグアンドドロップしてください。",
+    "question": "左側のワイヤレスアーキテクチャの利点を、右側のアーキテクチャタイプにドラッグアンドドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -14352,14 +14220,14 @@ const allQuestions = [
   },
   {
     "id": "NO.1226",
-    "question": "左側のネットワークトポロジアーキテクチャタイプを、右側の対応する機能にドラッグ＆ドロップしてください。すべてのアーキテクチャタイプが使用されるわけではありません。",
+    "question": "左側のネットワークトポロジアーキテクチャタイプを、右側の対応する機能にドラッグ＆ドロップしてください。すべてのアーキテクチャタイプが使用されるわけではありません。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
   },
   {
     "id": "NO.1227",
-    "question": "左側のアタック緩和技術を、それが緩和するアタックタイプ（右側）にドラッグ＆ドロップしてください。",
+    "question": "左側のアタック緩和技術を、それが緩和するアタックタイプ（右側）にドラッグ＆ドロップしてください。\nAnswer:\n*+>Explanation:",
     "options": [],
     "answer": "",
     "explanation": ""
@@ -14585,6 +14453,7 @@ function App() {
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
   const wrongCount = getCurrentWrongCount();
+  const emptyQuestions = allQuestions.filter(q => !q.answer.trim() && !q.explanation.trim());
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
@@ -14600,6 +14469,21 @@ function App() {
             </button>
           </div>
         </div>
+
+        {emptyQuestions.length > 0 && (
+          <div className="w-full max-w-4xl mb-6 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 rounded-r-lg shadow-sm">
+            <div className="flex items-center gap-2 text-yellow-800 dark:text-yellow-400 font-bold mb-2">
+              <span>⚠️</span>
+              解答・解説が空欄の問題があります
+            </div>
+            <div className="text-yellow-700 dark:text-yellow-300 text-sm flex flex-wrap gap-2">
+              {emptyQuestions.map(q => (
+                <span key={q.id} className="bg-yellow-100 dark:bg-yellow-900/40 px-2 py-1 rounded font-mono">{q.id}</span>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="w-full max-w-4xl space-y-8">
           {questions.map((q, index) => {
             const ansState = answers[q.id] || { selectedOptions: [] };
