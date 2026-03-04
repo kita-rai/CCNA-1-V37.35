@@ -14426,6 +14426,16 @@ function App() {
     return count;
   };
 
+  const scrollToAnswer = (qId) => {
+    setTimeout(() => {
+      const element = document.getElementById('answer-area-' + qId);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - 250;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   const handleOptionClick = (qId, option, answerText) => {
     if (answers[qId]?.answered) return;
     const expectedChars = getExpectedChars(answerText);
@@ -14451,6 +14461,7 @@ function App() {
         }
         return { ...prev, [qId]: { selectedOptions: [option], answered: true, isCorrect } };
       });
+      scrollToAnswer(qId);
     }
   };
 
@@ -14472,6 +14483,15 @@ function App() {
       }
       return { ...prev, [qId]: { ...current, answered: true, isCorrect } };
     });
+    scrollToAnswer(qId);
+  };
+
+  const handleSelfJudge = (qId, isCorrect) => {
+    setAnswers(prev => ({
+      ...prev,
+      [qId]: { ...prev[qId], answered: true, isCorrect }
+    }));
+    scrollToAnswer(qId);
   };
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
@@ -14682,6 +14702,7 @@ function App() {
                   </div>
                   <div className="p-6 md:p-8">
                     <div className="prose dark:prose-invert max-w-none mb-6 whitespace-pre-wrap text-slate-800 dark:text-slate-200 text-lg leading-relaxed">{q.question}</div>
+                    
                     {q.options.length > 0 ? (
                       <div className="space-y-3 mb-6">
                         {q.options.map((opt, idx) => {
@@ -14723,27 +14744,25 @@ function App() {
                       )
                     )}
                     {ansState.answered && (
-                      <div className="mt-6 border-t border-slate-100 dark:border-slate-700 pt-6">
+                      <div className="animate-in fade-in slide-in-from-top-4 duration-300 mt-6 border-t border-slate-100 dark:border-slate-700 pt-6">
+                        
+                        {/* スクロールアンカー */}
+                        <div id={"answer-area-" + q.id}></div>
+
                         {ansState.isCorrect === null && (
                            <div className="mb-6 flex flex-col items-center p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800/50">
                               <p className="text-orange-800 dark:text-orange-300 font-medium mb-3">結果を記録してください</p>
                               <div className="flex gap-4">
-                                <button onClick={() => setAnswers(prev => ({ ...prev, [q.id]: { ...prev[q.id], answered: true, isCorrect: true } }))} className="px-5 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 font-bold flex items-center gap-2"><span>✔️</span> 正解した</button>
-                                <button onClick={() => setAnswers(prev => ({ ...prev, [q.id]: { ...prev[q.id], answered: true, isCorrect: false } }))} className="px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-bold flex items-center gap-2"><span>❌</span> 間違えた</button>
+                                <button onClick={() => handleSelfJudge(q.id, true)} className="px-5 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 font-bold flex items-center gap-2"><span>✔️</span> 正解した</button>
+                                <button onClick={() => handleSelfJudge(q.id, false)} className="px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-bold flex items-center gap-2"><span>❌</span> 間違えた</button>
                               </div>
                            </div>
                         )}
-                        <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-5 rounded-r-xl mb-4 shadow-sm">
+                        <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-5 rounded-r-xl shadow-sm mb-6">
                           <div className="flex items-center gap-2 text-green-700 dark:text-green-400 font-bold text-lg mb-2"><span>✅</span> Answer</div>
                           <div className="text-green-900 dark:text-green-100 font-medium whitespace-pre-wrap">{q.answer || "解答が指定されていません"}</div>
                         </div>
-                        {q.explanation && (
-                          <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-5 rounded-r-xl shadow-sm">
-                            <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-bold text-lg mb-2"><span>ℹ️</span> Explanation</div>
-                            <div className="text-blue-900 dark:text-blue-100 text-sm md:text-base leading-relaxed whitespace-pre-wrap">{q.explanation}</div>
-                          </div>
-                        )}
-                        
+
                         {index < displayQuestions.length - 1 && (
                           <button 
                             onClick={() => {
@@ -14753,10 +14772,17 @@ function App() {
                                 window.scrollTo({ top: y, behavior: 'smooth' });
                               }
                             }}
-                            className="mt-6 w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700"
+                            className="my-6 w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 shadow-sm"
                           >
                             次の問題へ <span>⬇️</span>
                           </button>
+                        )}
+
+                        {q.explanation && (
+                          <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-5 rounded-r-xl shadow-sm">
+                            <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-bold text-lg mb-2"><span>ℹ️</span> Explanation</div>
+                            <div className="text-blue-900 dark:text-blue-100 text-sm md:text-base leading-relaxed whitespace-pre-wrap">{q.explanation}</div>
+                          </div>
                         )}
                       </div>
                     )}
