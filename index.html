@@ -14365,30 +14365,38 @@ function App() {
   const [questions, setQuestions] = useState(allQuestions);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [answers, setAnswers] = useState({});
-  const [wrongHistory, setWrongHistory] = useState(new Set());
+  const [history, setHistory] = useState({});
+  const [showEmptyList, setShowEmptyList] = useState(false);
+  const [hideEmptyQuestions, setHideEmptyQuestions] = useState(false);
+  const [hideCorrectQuestions, setHideCorrectQuestions] = useState(false);
 
-  const updateWrongHistory = () => {
-    const newWrongHistory = new Set(wrongHistory);
+  const updateHistory = () => {
+    const nextHistory = { ...history };
     Object.keys(answers).forEach(id => {
-      if (answers[id].answered && !answers[id].isCorrect) newWrongHistory.add(id);
-      else if (answers[id].answered && answers[id].isCorrect) newWrongHistory.delete(id);
+      if (answers[id].answered && answers[id].isCorrect !== null) {
+        if (!nextHistory[id]) nextHistory[id] = [];
+        nextHistory[id] = [...nextHistory[id], answers[id].isCorrect].slice(-5);
+      }
     });
-    setWrongHistory(newWrongHistory);
-    return newWrongHistory;
+    setHistory(nextHistory);
+    return nextHistory;
   };
 
   const handleReset = () => {
-    updateWrongHistory();
+    updateHistory();
     setAnswers({});
     setQuestions([...allQuestions].sort(() => Math.random() - 0.5));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleResetWrongOnly = () => {
-    const newWrongHistory = updateWrongHistory();
-    if (newWrongHistory.size === 0) return;
+    const nextHistory = updateHistory();
     setAnswers({});
-    const wrongQuestions = allQuestions.filter(q => newWrongHistory.has(q.id));
+    const wrongQuestions = allQuestions.filter(q => {
+      const hist = nextHistory[q.id];
+      return hist && hist[hist.length - 1] === false;
+    });
+    if (wrongQuestions.length === 0) return;
     setQuestions(wrongQuestions.sort(() => Math.random() - 0.5));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -14398,7 +14406,10 @@ function App() {
     allQuestions.forEach(q => {
       const ans = answers[q.id];
       if (ans && ans.answered) { if (ans.isCorrect === false) count++; }
-      else { if (wrongHistory.has(q.id)) count++; }
+      else { 
+        const hist = history[q.id];
+        if (hist && hist[hist.length - 1] === false) count++; 
+      }
     });
     return count;
   };
@@ -14452,15 +14463,31 @@ function App() {
   };
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
   const wrongCount = getCurrentWrongCount();
   const emptyQuestions = allQuestions.filter(q => !q.answer.trim() && !q.explanation.trim());
+  const displayQuestions = questions.filter(q => {
+    if (hideEmptyQuestions && !q.answer.trim() && !q.explanation.trim()) return false;
+    if (hideCorrectQuestions && history[q.id] && history[q.id][history[q.id].length - 1] === true) return false;
+    return true;
+  });
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
       <div className="min-h-screen bg-slate-100 dark:bg-slate-900 p-4 md:p-8 flex flex-col items-center transition-colors duration-300 text-slate-900 dark:text-slate-100">
         <div className="w-full max-w-4xl flex justify-end items-center mb-6 sticky top-4 z-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-6 py-3 rounded-2xl shadow-sm border border-transparent dark:border-slate-700">
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center justify-end">
             <button onClick={toggleDarkMode} className="p-2 mr-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">{isDarkMode ? '☀️' : '🌙'}</button>
+            <button
+              onClick={() => setHideCorrectQuestions(!hideCorrectQuestions)}
+              className={"flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-lg transition-colors shadow-sm font-semibold text-sm sm:text-base " + (hideCorrectQuestions ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700')}
+            >
+              <span>{hideCorrectQuestions ? '✅' : '☑️'}</span>
+              <span className="hidden sm:inline">正解済を除外</span>
+              <span className="sm:hidden">正解除外</span>
+            </button>
             <button onClick={handleResetWrongOnly} disabled={wrongCount === 0} className="flex items-center gap-1 sm:gap-2 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 transition-colors shadow-sm font-semibold text-sm sm:text-base">
               <span>⚠️</span><span className="hidden sm:inline">誤答のみシャッフル</span><span className="sm:hidden">誤答</span><span className="opacity-80">({wrongCount})</span>
             </button>
@@ -14472,27 +14499,55 @@ function App() {
 
         {emptyQuestions.length > 0 && (
           <div className="w-full max-w-4xl mb-6 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 rounded-r-lg shadow-sm">
-            <div className="flex items-center gap-2 text-yellow-800 dark:text-yellow-400 font-bold mb-2">
-              <span>⚠️</span>
-              解答・解説が空欄の問題があります
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
+              <div className="flex items-center gap-2 text-yellow-800 dark:text-yellow-400 font-bold">
+                <span>⚠️</span> 解答・解説が空欄の問題があります ({emptyQuestions.length}問)
+              </div>
+              <div className="flex gap-2">
+                <button onClick={() => setShowEmptyList(!showEmptyList)} className="px-3 py-1.5 text-sm font-medium bg-yellow-200 dark:bg-yellow-800/50 text-yellow-800 dark:text-yellow-200 rounded hover:bg-yellow-300 dark:hover:bg-yellow-700/50 transition-colors">
+                  <span>📜</span> {showEmptyList ? '一覧を隠す' : '一覧を表示'}
+                </button>
+                <button onClick={() => setHideEmptyQuestions(!hideEmptyQuestions)} className={"px-3 py-1.5 text-sm font-medium rounded transition-colors " + (hideEmptyQuestions ? "bg-blue-500 text-white hover:bg-blue-600 shadow-sm" : "bg-yellow-200 dark:bg-yellow-800/50 text-yellow-800 dark:text-yellow-200 hover:bg-yellow-300 dark:hover:bg-yellow-700/50")}>
+                  <span>{hideEmptyQuestions ? '👁️' : '🚫'}</span> {hideEmptyQuestions ? '除外を解除' : 'これらを除外'}
+                </button>
+              </div>
             </div>
-            <div className="text-yellow-700 dark:text-yellow-300 text-sm flex flex-wrap gap-2">
-              {emptyQuestions.map(q => (
-                <span key={q.id} className="bg-yellow-100 dark:bg-yellow-900/40 px-2 py-1 rounded font-mono">{q.id}</span>
-              ))}
-            </div>
+            {showEmptyList && (
+              <div className="text-yellow-700 dark:text-yellow-300 text-sm flex flex-wrap gap-2 mt-3 p-3 bg-yellow-100/50 dark:bg-yellow-900/30 rounded border border-yellow-200/50 dark:border-yellow-800/30">
+                {emptyQuestions.map(q => (
+                  <span key={q.id} className="bg-white dark:bg-yellow-900/60 px-2.5 py-1 rounded font-mono shadow-sm border border-yellow-200 dark:border-yellow-800/50">{q.id}</span>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
         <div className="w-full max-w-4xl space-y-8">
-          {questions.map((q, index) => {
+          {displayQuestions.map((q, index) => {
             const ansState = answers[q.id] || { selectedOptions: [] };
-            const isWrongHistory = wrongHistory.has(q.id);
+            const qHistory = history[q.id] || [];
+            const isWrongHistory = qHistory.length > 0 && qHistory[qHistory.length - 1] === false;
+            
             return (
-              <div key={q.id} className={"bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden flex flex-col border-2 transition-colors " + (isWrongHistory ? 'border-red-300 dark:border-red-500/50' : 'border-transparent dark:border-slate-700')}>
+              <div id={"question-" + index} key={q.id} className={"bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden flex flex-col border-2 transition-colors " + (isWrongHistory ? 'border-red-300 dark:border-red-500/50' : 'border-transparent dark:border-slate-700')}>
                 <div className="bg-slate-800 dark:bg-slate-950 text-white px-6 py-4 flex items-center justify-between">
-                  <h2 className="text-xl font-bold flex items-center gap-3"><span className="bg-slate-700 dark:bg-slate-800 px-3 py-1 rounded-md text-sm">Q{index + 1}</span>{q.id}</h2>
-                  {isWrongHistory && <div className="flex items-center gap-1 text-red-300 dark:text-red-400 text-sm font-bold bg-red-900/30 px-3 py-1 rounded-full"><span>⚠️</span>前回誤答</div>}
+                  <h2 className="text-xl font-bold flex items-center flex-wrap gap-2">
+                    <span className="bg-slate-700 dark:bg-slate-800 px-3 py-1 rounded-md text-sm">{q.id}</span>
+                    <div className="flex items-center gap-2 ml-2 text-sm text-slate-300 dark:text-slate-400 bg-slate-700/50 dark:bg-slate-800/50 px-3 py-1.5 rounded-lg">
+                      <span className="text-xs hidden sm:inline">過去正誤（左から新しい順）</span>
+                      <span className="text-xs sm:hidden">過去</span>
+                      <div className="flex gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => {
+                          const res = [...qHistory].reverse()[i];
+                          return (
+                            <span key={i} title={res === true ? "正解" : res === false ? "不正解" : "まだ"} className="text-base leading-none">
+                              {res === true ? '🙆‍♂️' : res === false ? '🙅' : '🥷'}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </h2>
                 </div>
                 <div className="p-6 md:p-8">
                   <div className="prose dark:prose-invert max-w-none mb-6 whitespace-pre-wrap text-slate-800 dark:text-slate-200 text-lg leading-relaxed">{q.question}</div>
@@ -14557,12 +14612,30 @@ function App() {
                           <div className="text-blue-900 dark:text-blue-100 text-sm md:text-base leading-relaxed whitespace-pre-wrap">{q.explanation}</div>
                         </div>
                       )}
+                      
+                      {index < displayQuestions.length - 1 && (
+                        <button 
+                          onClick={() => document.getElementById('question-' + (index + 1))?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                          className="mt-6 w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700"
+                        >
+                          次の問題へ <span>⬇️</span>
+                        </button>
+                      )}
                     </div>
                   )}
                 </div>
               </div>
             );
           })}
+        </div>
+
+        <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+          <button onClick={scrollToTop} className="p-3 bg-slate-800 dark:bg-slate-700 text-white rounded-full shadow-xl hover:bg-slate-700 dark:hover:bg-slate-600 transition-all opacity-80 hover:opacity-100 focus:outline-none" title="ページ上部へ">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+          </button>
+          <button onClick={scrollToBottom} className="p-3 bg-slate-800 dark:bg-slate-700 text-white rounded-full shadow-xl hover:bg-slate-700 dark:hover:bg-slate-600 transition-all opacity-80 hover:opacity-100 focus:outline-none" title="ページ下部へ">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+          </button>
         </div>
       </div>
     </div>
